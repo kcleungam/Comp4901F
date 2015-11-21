@@ -1,5 +1,3 @@
-import java.lang.Integer;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -7,42 +5,53 @@ import java.util.HashMap;
  */
 
 public class Account{
-    public Person person;
-    public HashMap<int,Person> contact;
+    public Profile profile;
+    public HashMap<Integer,Profile> contact;
 
     public Account(){
-        person = new Person();
-        contact = new HashMap<int, Person>();
+        profile = new Profile();
+        contact = new HashMap<Integer, Profile>();
     }
 
-    public Account(Person person, HashMap<int, Person> contact){
-        this.person = person;
+    public Account(Profile profile, HashMap<Integer, Profile> contact){
+        this.profile = profile;
         this.contact = contact;
     }
 
-    public void setPerson(Person person) {
-        this.person = person;
+    public void setProfile(Profile profile) {
+        this.profile = profile;
     }
 
-    public Person getPerson() {
-        return person;
+    public Profile getProfile() {
+        return profile;
     }
 
-    public void setContact(HashMap<int, Person> contact) {
+    public void setContact(HashMap<Integer, Profile> contact) {
         this.contact = contact;
     }
 
-    public HashMap<int, Person> getContact() {
+    public HashMap<Integer, Profile> getContact() {
         return contact;
     }
-    public void addContact(Person person){
-        this.contact.put(person.getId(), person);
+
+    public void addContact(Profile profile){
+        this.contact.put(profile.getId(), profile);
     }
 
     public void removeContact(int id){
         this.contact.remove(id);
     }
-    public void removeContact(Person person){
-        this.contact.remove(person.getId());
+
+    public void removeContact(Profile profile){
+        this.contact.remove(profile.getId());
     }
+
+    public boolean existContact(Profile profile){
+        return this.contact.containsKey(profile.getId());
+    }
+
+    public boolean existContact(int id){
+        return this.contact.containsKey(id);
+    }
+
 }
