@@ -54,4 +54,17 @@ public class Account{
         return this.contact.containsKey(id);
     }
 
+    ////// The follwing function provide the shortcut to access profile directly
+    public int getId(){
+        return this.getProfile().getId();
+    }
+
+    public String getName(){
+        return this.getProfile().getName();
+    }
+
+    public String getLivingPlace(){
+        return this.getProfile().getLivingPlace();
+    }
+
 }
