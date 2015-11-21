@@ -10,20 +10,20 @@ public class Profile {
     public String name;
     public String livingPlace;
 
-    public Person(){
+    public Profile(){
         id = -1;
         name = "";
         livingPlace = "";
     }
 
     // Copy Constructor
-    public Person(Person profile){
+    public Profile(Profile profile){
         this.id = profile.id;
         this.name = profile.name;
         this.livingPlace = profile.livingPlace;
     }
 
-    public Person(int id, String name, String livingPlace){
+    public Profile(int id, String name, String livingPlace){
         this.id = id;
         this.name = name;
         this.livingPlace = livingPlace;
