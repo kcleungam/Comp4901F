@@ -14,10 +14,22 @@ public class Flitter {
 
     public static void main(String args[]) {
         readFile(idName,idLiving, accountList);
-        //accountList.printAll();
+        accountList.printAll();
         readContact(contactFile, accountList);
-        //System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-        accountList.printContact(805);
+        accountList.printContactOf(5000);       //// works perfectly
+    }
+
+    public AccountList filterByContact(int rangeFrom, int rangeTo, AccountList accountList){
+        AccountList al = new AccountList();
+
+        for(Account account: accountList.getAccountList().values()){
+            // Find those who are in the range
+            if(   (account.getContactSize() >= rangeFrom) && ( account.getContactSize() <= rangeTo) ){
+                al.addAccount(account);
+            }
+        }
+
+        return al;
     }
 
     // static method, change the parameter pass in, but also can return to give options

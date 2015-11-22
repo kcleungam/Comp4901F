@@ -1,4 +1,5 @@
-import java.util.HashMap;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 /**
  * Created by Krauser on 21/11/2015.
@@ -6,14 +7,14 @@ import java.util.HashMap;
 
 public class Account{
     public Profile profile;
-    public HashMap<Integer,Profile> contact;
+    public SortedMap<Integer,Profile> contact;
 
     public Account(){
         profile = new Profile();
-        contact = new HashMap<Integer, Profile>();
+        contact = new TreeMap<Integer, Profile>();
     }
 
-    public Account(Profile profile, HashMap<Integer, Profile> contact){
+    public Account(Profile profile, SortedMap<Integer, Profile> contact){
         this.profile = profile;
         this.contact = contact;
     }
@@ -26,11 +27,11 @@ public class Account{
         return profile;
     }
 
-    public void setContact(HashMap<Integer, Profile> contact) {
+    public void setContact(SortedMap<Integer, Profile> contact) {
         this.contact = contact;
     }
 
-    public HashMap<Integer, Profile> getContact() {
+    public SortedMap<Integer, Profile> getContact() {
         return contact;
     }
 

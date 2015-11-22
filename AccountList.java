@@ -1,24 +1,25 @@
-import java.util.HashMap;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 /**
  * Created by Krauser on 21/11/2015.
  */
 public class AccountList {
-    public HashMap<Integer, Account> accountList;
+    public SortedMap<Integer, Account> accountList;
 
     public AccountList(){
-        accountList = new HashMap<Integer, Account>();
+        accountList = new TreeMap<Integer,Account>();
     }
     //Copy Constructor
     public AccountList(AccountList accountList){
         this.accountList = accountList.getAccountList();
     }
 
-    public void setAccountList(HashMap<Integer, Account> accountList) {
+    public void setAccountList(SortedMap<Integer, Account> accountList) {
         this.accountList = accountList;
     }
 
-    public HashMap<Integer, Account> getAccountList() {
+    public SortedMap<Integer, Account> getAccountList() {
         return accountList;
     }
 
@@ -61,7 +62,7 @@ public class AccountList {
         System.out.println(this.getAccountList());
     }
 
-    public void printContact(int id){
+    public void printContactOf(int id){
         for(Profile profile: this.getAccount(id).getContact().values()){
             System.out.println(profile.getId()+profile.getName()+profile.getLivingPlace());
         }
