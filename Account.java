@@ -54,7 +54,23 @@ public class Account{
         return this.contact.containsKey(id);
     }
 
-    ////// The follwing function provide the shortcut to access profile directly
+    //// This function is very important, it check how many contact in an account
+    public int getContactSize(){
+        return contact.size();
+    }
+
+    ////////// The follwing function provide the shortcut to access profile directly
+    public void setId(int id){
+        this.getProfile().setId(id);
+    }
+
+    public void setName(String name){
+        this.getProfile().setName(name);
+    }
+
+    public void setLivingPlace(String livingPlace){
+        this.getProfile().setLivingPlace(livingPlace);
+    }
     public int getId(){
         return this.getProfile().getId();
     }
@@ -66,5 +82,7 @@ public class Account{
     public String getLivingPlace(){
         return this.getProfile().getLivingPlace();
     }
+
+
 
 }
