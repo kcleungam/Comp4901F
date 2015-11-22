@@ -19,7 +19,7 @@ public class Flitter {
         //accountList.printContactOf(5000);       //// works perfectly
 
         AccountList handler = new AccountList();
-        handler = filterByContact(30,38,accountList);
+        handler = filterByContact(30,38,accountList);   //test success, work perfectly
         handler.printAll();
 
     }
