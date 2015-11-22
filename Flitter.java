@@ -14,12 +14,17 @@ public class Flitter {
 
     public static void main(String args[]) {
         readFile(idName,idLiving, accountList);
-        accountList.printAll();
+        //accountList.printAll();
         readContact(contactFile, accountList);
-        accountList.printContactOf(5000);       //// works perfectly
+        //accountList.printContactOf(5000);       //// works perfectly
+
+        AccountList handler = new AccountList();
+        handler = filterByContact(30,38,accountList);
+        handler.printAll();
+
     }
 
-    public AccountList filterByContact(int rangeFrom, int rangeTo, AccountList accountList){
+    public static AccountList filterByContact(int rangeFrom, int rangeTo, AccountList accountList){
         AccountList al = new AccountList();
 
         for(Account account: accountList.getAccountList().values()){
