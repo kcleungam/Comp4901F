@@ -16,23 +16,28 @@ public class Flitter {
     static String contactFile = "Links_Table.txt";
 
     public static void main(String args[]) {
+
+        ////Read data from file
         readFile(idName,idLiving, accountList);
         readContact(contactFile, accountList);
         //accountList.printAll();
         //accountList.printContactOf(5000);       //// works perfectly
 
+        //TODO Store the accountList which store all account into JSON, name as AccountList
 
-        System.out.println("--------------------Employee------------------");
+        System.out.println("--------------------Handler------------------");
         AccountList handlerList = new AccountList();
         handlerList = filterByContact(30,40,accountList);   //test success, work perfectly
         handlerList.printAll();
-        //TODO Please store it into JSON
+        //TODO Please store it into JSON, name as HandlerList
+        // Object store: handlerList
 
         System.out.println("--------------------Employee------------------");
         AccountList employeeList = new AccountList();
         employeeList = filterByContact(38,42,accountList);
-       // employeeList.printAll();
-        // TODO Please store it into    another       JSON
+        employeeList.printAll();
+        // TODO Please store it into   JSON, name as EmployeeList
+        // Object store: employeeList
 
         System.out.println("--------------Match Employee Handler set------------------");
 
@@ -41,51 +46,47 @@ public class Flitter {
         for(int i = 0 ; i < structureList.size();i++){
             structureList.get(i).printAll();            // Work perfectly, you can change the employee list range form 39-41 to play
         }
+
+        // TODO Store this ArrayList< CrimeStructure>  into JSON, Remind that StructureList is different from AccountList, name as EmployeeHandlerMatch
+        // Object store: strucureList
+
         System.out.println("-------------Find Middleman---------------");
-        /*
+
         structureList = findMiddleMan(structureList,accountList);
         for(int i = 0; i< structureList.size(); i++){
             structureList.get(i).printAll();
         }
-        */
-
-
+        // TODO Store this ArrayList< CrimeStructure>  into JSON, Remind that StructureList is different from AccountList, name as Middleman
+        // Object store: strucureList
+        
 
     }
 
     /**
-     *      This function is a little bit complicate. We have to find the middleMan in each crimeStructure
-     *      So first, we get each crimeStructure, then we get all handlers ( 3 or 4) in that structure
-     *      The method to find common Contact is simple,  add all the contact of these 3/4 handlers into one
-     *      Also add the subclass recordRepeat to count the number of contact appears ,  1 means it appear once, 3 means it appear three times( that's what we want)
+     *       This function is a little bit complicate. We have to find the middleMan in each crimeStructure
+     *      So first, we get each crimeStructure, then we get all handlers ( 3 or above)  in that structure
+     *      The method to find common Contact is simple,  add all the contact of these 3 handlers into one
+     *      When each handler add his contact list to combineContact, there will be repetition, count the repetition in repeatList
+     *       1 means it appear once, 3 means it appear three times( that's what we want)
      *
-     * @param matchList
+     * @param matchList      is the crime structure generated after employee handler match
+     * @param accountList   is the list store all account
      * @return
      */
+
     public static ArrayList<CrimeStructure> findMiddleMan(ArrayList<CrimeStructure> matchList, AccountList accountList){
 
-        ArrayList<CrimeStructure> structureList = new ArrayList<CrimeStructure>();
-/*
-        class RecordRepeat{
-            int count = 1;
-            int id = -1;
-
-            RecordRepeat(){
-                int count = 1;
-                int id = -1;
-            }
-        }
-*/
-
         for(int i = 0; i < matchList.size(); i++){
-            SortedMap<Integer,Integer> repeatList = new TreeMap<Integer,Integer>();
-            ArrayList<Integer> combineContact = new ArrayList<Integer>();
+            SortedMap<Integer,Integer> repeatList = new TreeMap<Integer,Integer>();     // store  { id, repeat count}
+            ArrayList<Integer> combineContact = new ArrayList<Integer>();               // store contact of all handler in one crimeStructure
 
             for(int j = 0; j < matchList.get(i).getHandler().size(); j++){
                 SortedMap<Integer,Profile> oneHandlerContactList = matchList.get(i).getHandler().get(j).getContact();
+
                 for(Profile profile: oneHandlerContactList.values()){
                     if(combineContact.contains(profile.getId())){
-                        //repeatList.replace( profile.getId() , (repeatList.get(profile.getId()))+1 );    //get the old value and +1
+                        //get the old value(repeat count in repeatList) and +1
+                        repeatList.replace(profile.getId(), (repeatList.get(profile.getId())) + 1);
 
                     } else{
                         combineContact.add(profile.getId());            // add to the conbineContact if it is first appear
@@ -93,24 +94,31 @@ public class Flitter {
                     }
 
                 }
-                System.out.println("--------------");
-                System.out.println(repeatList);
-                System.out.println("--------------");
-
-                // Then check this structure have middle man or not
-                // We have to remove employee in repeatList, as handlers has common contact which is employee
-                repeatList.remove(matchList.get(i).employee.getId());
-                if(matchList.size() == 1){
-                    matchList.get(i).setMiddleMan(accountList.getAccount(repeatList.firstKey()));   //only 1 key
+            }
+            // Then check this structure have middle man or not
+            // We have to remove employee in repeatList, as handlers has common contact which is employee
+            repeatList.remove(matchList.get(i).employee.getId());
+            //Set the middleMan
+            for(Integer id : repeatList.keySet()) {
+                if(repeatList.get(id) >=3) {     //check repeat count, repeat 3 times means three handlers has this contact
+                    matchList.get(i).setMiddleMan(accountList.getAccount(id));
                 }
             }
 
-            for(int k = 0; k < matchList.size(); k++){
-                if(matchList.get(k).getMiddleMan() == null){
-                    matchList.remove(k);                // will it be a problem? eg. I remove 3 and 4 replace 3, but next loop is 4
-                }
+        }
+
+        // Remove those structure which has no middleman
+        //// Can not delete directly, otherwise would have concurrent problem
+        ArrayList<CrimeStructure> markDelete = new ArrayList<CrimeStructure>();
+        for(CrimeStructure cs: matchList){
+            if(cs.getMiddleMan().getId() == -1){
+                markDelete.add(cs);
             }
         }
+        for(int i = 0; i < markDelete.size(); i++){
+            matchList.remove(markDelete.get(i));
+        }
+
 
         return matchList;
     }
