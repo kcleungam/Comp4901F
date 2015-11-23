@@ -31,7 +31,33 @@ public class AccountList {
         return this.accountList.get(id);
     }
 
+    ////////This function is very important, it add the contact to each other
+    public void addLink(int id1, int id2){
+        this.getAccount(id1).addContact(this.getProfile(id2));      // add profile of id2 to id1's contact
+        this.getAccount(id2).addContact(this.getProfile(id1));     // add profile of id1 to id2's contact
+
+    }
+    public boolean checkLink(int id1, int id2){
+        return this.getAccount(id1).existContact(id2);
+    }
+
+    public void printAll(){
+        for (Account account: this.getAccountList().values()) {
+            System.out.println(account.getId() + account.getName() + account.getLivingPlace() + account.checkInternational());
+        }
+        System.out.println(this.getAccountList());
+    }
+
+    public void printContactOf(int id){
+        for(Profile profile: this.getAccount(id).getContact().values()){
+            System.out.println(profile.getId()+profile.getName()+profile.getLivingPlace());
+        }
+    }
+
     ////////The following function provide a shortcut to access profile directly
+    public Boolean checkInternational(int id){
+        return this.getAccount(id).checkInternational();
+    }
 
     public Profile getProfile(int id){
         return this.getAccount(id).getProfile();
@@ -45,26 +71,5 @@ public class AccountList {
         return this.getAccount(id).getLivingPlace();
     }
 
-    ////////This function is very important, it add the contact to each other
-    public void addLink(int id1, int id2){
-        this.getAccount(id1).addContact(this.getProfile(id2));      // add profile of id2 to id1's contact
-        this.getAccount(id2).addContact(this.getProfile(id1));     // add profile of id1 to id2's contact
 
-    }
-    public boolean checkLink(int id1, int id2){
-        return this.getAccount(id1).existContact(id2);
-    }
-
-    public void printAll(){
-        for (Account account: this.getAccountList().values()) {
-            System.out.println(account.getId() + account.getName() + account.getLivingPlace());
-        }
-        System.out.println(this.getAccountList());
-    }
-
-    public void printContactOf(int id){
-        for(Profile profile: this.getAccount(id).getContact().values()){
-            System.out.println(profile.getId()+profile.getName()+profile.getLivingPlace());
-        }
-    }
 }

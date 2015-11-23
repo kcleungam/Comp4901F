@@ -84,6 +84,8 @@ public class Account{
         return this.getProfile().getLivingPlace();
     }
 
-
+    public Boolean checkInternational(){
+        return this.getProfile().checkInternational();
+    }
 
 }
