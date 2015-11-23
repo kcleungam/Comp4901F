@@ -43,20 +43,22 @@ public class AccountList {
 
     public void printAll(){
         for (Account account: this.getAccountList().values()) {
-            System.out.println(account.getId() + account.getName() + account.getLivingPlace() + account.checkInternational());
+            System.out.println(account.getId() + account.getName() + account.getLivingPlace());
+            System.out.println(account.checkInternationalLink());
+            System.out.println(account.getContactSize());
         }
-        System.out.println(this.getAccountList());
     }
 
     public void printContactOf(int id){
         for(Profile profile: this.getAccount(id).getContact().values()){
             System.out.println(profile.getId()+profile.getName()+profile.getLivingPlace());
+            System.out.println(profile.getContactSize());
         }
     }
 
     ////////The following function provide a shortcut to access profile directly
-    public Boolean checkInternational(int id){
-        return this.getAccount(id).checkInternational();
+    public Boolean checkLiveForeign(int id){
+        return this.getAccount(id).checkLiveForeign();
     }
 
     public Profile getProfile(int id){
@@ -69,6 +71,14 @@ public class AccountList {
 
     public String getLivingPlace(int id){
         return this.getAccount(id).getLivingPlace();
+    }
+
+    public void setInternationalLink(int id, Boolean international){
+        this.getAccount(id).setInternationalLink(international);
+    }
+
+    public Boolean checkInternationalLink(int id){
+        return this.getAccount(id).checkInternationalLink();
     }
 
 

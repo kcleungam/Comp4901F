@@ -20,8 +20,9 @@ public class Flitter {
         ////Read data from file
         readFile(idName,idLiving, accountList);
         readContact(contactFile, accountList);
+        international(accountList);
         //accountList.printAll();
-        //accountList.printContactOf(5000);       //// works perfectly
+        //accountList.printContactOf(100);       //// works perfectly
 
         //TODO Store the accountList which store all account into JSON, name as AccountList
 
@@ -43,9 +44,11 @@ public class Flitter {
 
         ArrayList<CrimeStructure> structureList = new ArrayList<CrimeStructure>();
         structureList = employeeHandlerMatch(employeeList,handlerList);
+
         for(int i = 0 ; i < structureList.size();i++){
             structureList.get(i).printAll();            // Work perfectly, you can change the employee list range form 39-41 to play
         }
+
 
         // TODO Store this ArrayList< CrimeStructure>  into JSON, Remind that StructureList is different from AccountList, name as EmployeeHandlerMatch
         // Object store: strucureList
@@ -53,12 +56,32 @@ public class Flitter {
         System.out.println("-------------Find Middleman---------------");
 
         structureList = findMiddleMan(structureList,accountList);
+
         for(int i = 0; i< structureList.size(); i++){
             structureList.get(i).printAll();
         }
+
         // TODO Store this ArrayList< CrimeStructure>  into JSON, Remind that StructureList is different from AccountList, name as Middleman
         // Object store: strucureList
-        
+
+        System.out.println("--------------Find Fearless Leader-----------------");
+
+        for(CrimeStructure crimeStructure: structureList){
+            for(Integer key: crimeStructure.getMiddleMan().getContact().keySet()){
+                if(crimeStructure.getMiddleMan().getContact().get(key).getContactSize() > 100){
+                    if(crimeStructure.getMiddleMan().getContact().get(key).consistInternationalLink){
+                        crimeStructure.setFearlessLeader(accountList.getAccount(key));
+                    }
+                }
+            }
+        }
+
+        for(int i = 0; i< structureList.size(); i++){
+            structureList.get(i).printAll();
+        }
+
+        //TODO TODO Store this ArrayList< CrimeStructure>  into JSON, Remind that StructureList is different from AccountList, name as FullStructure
+        //Object store: structureList
 
     }
 
@@ -155,6 +178,16 @@ public class Flitter {
         return structureList;
     }
 
+    /**
+     *
+     *      This function filter the account which  the number of contact is within the range
+     *       eg. filter those have 30-40 contact  ------> handler
+     *
+     * @param rangeFrom
+     * @param rangeTo
+     * @param accountList
+     * @return
+     */
     public static AccountList filterByContact(int rangeFrom, int rangeTo, AccountList accountList){
         AccountList al = new AccountList();
 
@@ -244,11 +277,16 @@ public class Flitter {
                     if(id1 >6000|| id2 > 6000){  // the id>6000 is the label of City/Country, useless
                         continue;                // We better not use it to make things simple
                     }
-
                     accountList.addLink(id1,id2);
                     //System.out.println(id1 + "  " + id2);
                 } else {
                     break;
+                }
+            }
+
+            for(Account account: accountList.getAccountList().values()){
+                for(Profile profile: account.getContact().values()){    // set the contact size of profile in contact
+                    profile.setContactSize(accountList.getAccount(profile.getId()).getContactSize());
                 }
             }
             dis.close();
@@ -257,6 +295,23 @@ public class Flitter {
         }catch (IOException e){
             e.printStackTrace();
         }
+    }
+
+    /**
+     *
+     *      Check if there are international contact in each account, if so, change the Boolean "consistInternationalContact" into true
+     *
+     * @param accountList
+     */
+    public static void international(AccountList accountList){
+        for(Account account: accountList.getAccountList().values()){
+            for(Profile profile: account.getContact().values()){    // Profile in contact
+                if(profile.checkLiveForeign() != account.getProfile().checkLiveForeign()){  // profile in account's contact != profile in account
+                    account.setInternationalLink(true);
+                }
+            }
+        }
+
     }
 }
 

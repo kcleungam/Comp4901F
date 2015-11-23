@@ -37,6 +37,7 @@ public class Account{
 
     public void addContact(Profile profile){
         this.contact.put(profile.getId(), profile);
+        this.profile.setContactSize(this.getContactSize());
     }
 
     public void removeContact(int id){
@@ -84,8 +85,17 @@ public class Account{
         return this.getProfile().getLivingPlace();
     }
 
-    public Boolean checkInternational(){
-        return this.getProfile().checkInternational();
+    public Boolean checkLiveForeign(){
+        return this.getProfile().checkLiveForeign();
     }
+
+    public void setInternationalLink(Boolean international){
+        this.profile.setInternationalLink(international);
+    }
+
+    public Boolean checkInternationalLink(){
+        return this.profile.checkInternationalLink();
+    }
+
 
 }
