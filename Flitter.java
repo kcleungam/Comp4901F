@@ -1,7 +1,7 @@
-import java.io.BufferedInputStream;
-import java.io.DataInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -25,44 +25,47 @@ public class Flitter {
         //accountList.printContactOf(100);       //// works perfectly
 
         //TODO Store the accountList which store all account into JSON, name as AccountList
+        toJson(accountList, "AccountList.json");
 
         System.out.println("--------------------Handler------------------");
         AccountList handlerList = new AccountList();
         handlerList = filterByContact(30,40,accountList);   //test success, work perfectly
         handlerList.printAll();
+
         //TODO Please store it into JSON, name as HandlerList
-        // Object store: handlerList
+        toJson(handlerList, "HandlerList.json");
+
 
         System.out.println("--------------------Employee------------------");
         AccountList employeeList = new AccountList();
         employeeList = filterByContact(38,42,accountList);
         employeeList.printAll();
         // TODO Please store it into   JSON, name as EmployeeList
-        // Object store: employeeList
+        toJson(employeeList, "EmployeeList.json");
 
         System.out.println("--------------Match Employee Handler set------------------");
 
         ArrayList<CrimeStructure> structureList = new ArrayList<CrimeStructure>();
         structureList = employeeHandlerMatch(employeeList,handlerList);
-
+        /*
         for(int i = 0 ; i < structureList.size();i++){
             structureList.get(i).printAll();            // Work perfectly, you can change the employee list range form 39-41 to play
         }
-
+        */
 
         // TODO Store this ArrayList< CrimeStructure>  into JSON, Remind that StructureList is different from AccountList, name as EmployeeHandlerMatch
-        // Object store: strucureList
+        toJson(structureList,"EmployeeHandlerMatch.json");
 
         System.out.println("-------------Find Middleman---------------");
 
         structureList = findMiddleMan(structureList,accountList);
-
+        /*
         for(int i = 0; i< structureList.size(); i++){
             structureList.get(i).printAll();
         }
-
+        */
         // TODO Store this ArrayList< CrimeStructure>  into JSON, Remind that StructureList is different from AccountList, name as Middleman
-        // Object store: strucureList
+        toJson(structureList, "Middleman.json");
 
         System.out.println("--------------Find Fearless Leader-----------------");
 
@@ -81,9 +84,40 @@ public class Flitter {
         }
 
         //TODO TODO Store this ArrayList< CrimeStructure>  into JSON, Remind that StructureList is different from AccountList, name as FullStructure
-        //Object store: structureList
+        toJson(structureList, "FullStructure.json");
 
     }
+
+    public static void toJson(AccountList accountList, String fileName){
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String json = gson.toJson(accountList);
+
+        try {
+            //write converted json data to a file named "file.json"
+            FileWriter writer = new FileWriter(fileName);
+            writer.write(json);
+            writer.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void toJson(ArrayList<CrimeStructure> structureList, String fileName){
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            String json = gson.toJson(structureList);
+
+            try {
+                //write converted json data to a file named "file.json"
+                FileWriter writer = new FileWriter(fileName);
+                writer.write(json);
+                writer.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+    }
+
 
     /**
      *       This function is a little bit complicate. We have to find the middleMan in each crimeStructure
