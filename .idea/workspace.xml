@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee233f45-0f7b-48d4-9ce5-651c026ee1e0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FullStructure_0.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FullStructure_1.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Middleman_0.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Middleman_1.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/EmployeeHandler_38to42.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flitter.java" afterPath="$PROJECT_DIR$/Flitter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Comp4901F.iws" />
@@ -31,8 +29,8 @@
       <file leaf-file-name="Flitter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Flitter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9042821">
-              <caret line="90" column="41" selection-start-line="90" selection-start-column="41" selection-end-line="90" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.47858942">
+              <caret line="51" column="39" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -302,7 +300,13 @@
       <option name="project" value="LOCAL" />
       <updated>1448543962849</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="forget to upload Json, upload now">
+      <created>1448544084763</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1448544084763</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -339,7 +343,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Finish E H match Json, name as MiddleMan , you can use it to find Middleman&#10;&#10;Finish Full Structure Json" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish E H match Json, name as MiddleMan , you can use it to find Middleman&#10;&#10;Finish Full Structure Json" />
+    <MESSAGE value="forget to upload Json, upload now" />
+    <option name="LAST_COMMIT_MESSAGE" value="forget to upload Json, upload now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -352,8 +357,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Flitter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9042821">
-          <caret line="90" column="41" selection-start-line="90" selection-start-column="41" selection-end-line="90" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.47858942">
+          <caret line="51" column="39" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
           <folding />
         </state>
       </provider>

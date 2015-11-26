@@ -43,6 +43,9 @@ public class Flitter {
         // TODO Please store it into   JSON, name as EmployeeList
         //toJson(employeeList, "EmployeeList.json");
 
+        EHMatchJson(employeeList,handlerList,38,42);
+
+
         System.out.println("--------------Match Employee Handler set------------------");
 
         ArrayList<CrimeStructure> structureList = new ArrayList<CrimeStructure>();
@@ -91,6 +94,65 @@ public class Flitter {
         fullStructureJson(structureList);
 
     }
+
+    public static void EHMatchJson(AccountList employeeList, AccountList handlerList, int rangeFrom, int rangeTo){
+
+        Boolean firstElement = true;
+
+        try {
+
+            //write converted json data to a file named "file.json"
+            FileWriter writer = new FileWriter("EmployeeHandler_" + rangeFrom +"to"+ rangeTo + ".json");
+            writer.write("{\n");
+
+
+            for(Account eAccount: employeeList.getAccountList().values()){
+                for(Account hAccount: handlerList.getAccountList().values()){
+                    if(eAccount.existContact(hAccount.getId())){
+                        if(firstElement == true){
+                            writer.write(hAccount.getId()+ ":{");
+                            writer.write("employee:");
+                            writer.write(  "\"" +  eAccount.getId()+  "\"}");
+                            firstElement = false;
+                        }else{
+                            writer.write(",\n");
+                            writer.write(hAccount.getId()+ ":{");
+                            writer.write("employee:");
+                            writer.write("\"" + eAccount.getId() + "\"}");
+                        }
+                    }
+                }
+            }
+
+            writer.write("\n};");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        /*
+        ArrayList<CrimeStructure> structureList = new ArrayList<CrimeStructure>();
+
+        for(Account eAccount: employee.getAccountList().values()){  //give one employee every time
+            CrimeStructure crimeStructure = new CrimeStructure();
+
+            for(Account hAccount: handler.getAccountList().values()){   // then check all handlers
+                if(eAccount.existContact(hAccount.getId())){
+                    crimeStructure.setEmployee(eAccount);
+                    crimeStructure.addHandler(hAccount);
+                }
+            }
+
+            if (crimeStructure.getHandler().size() >= 3){
+                structureList.add(crimeStructure);    // only need those structure with 1 employee and 3+ handler
+            }else{
+                crimeStructure = null;
+            }
+
+        }
+        return structureList;
+        */
+    }
+
 
     /**
      *
