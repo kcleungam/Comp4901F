@@ -25,23 +25,23 @@ public class Flitter {
         //accountList.printContactOf(100);       //// works perfectly
 
         //TODO Store the accountList which store all account into JSON, name as AccountList
-        toJson(accountList, "AccountList.json");
+        //toJson(accountList, "AccountList.json");
 
         System.out.println("--------------------Handler------------------");
         AccountList handlerList = new AccountList();
         handlerList = filterByContact(30,40,accountList);   //test success, work perfectly
-        handlerList.printAll();
+        //handlerList.printAll();
 
         //TODO Please store it into JSON, name as HandlerList
-        toJson(handlerList, "HandlerList.json");
+        //toJson(handlerList, "HandlerList.json");
 
 
         System.out.println("--------------------Employee------------------");
         AccountList employeeList = new AccountList();
         employeeList = filterByContact(38,42,accountList);
-        employeeList.printAll();
+        //employeeList.printAll();
         // TODO Please store it into   JSON, name as EmployeeList
-        toJson(employeeList, "EmployeeList.json");
+        //toJson(employeeList, "EmployeeList.json");
 
         System.out.println("--------------Match Employee Handler set------------------");
 
@@ -54,7 +54,7 @@ public class Flitter {
         */
 
         // TODO Store this ArrayList< CrimeStructure>  into JSON, Remind that StructureList is different from AccountList, name as EmployeeHandlerMatch
-        toJson(structureList,"EmployeeHandlerMatch.json");
+        //toJson(structureList,"EmployeeHandlerMatch.json");
 
         System.out.println("-------------Find Middleman---------------");
 
@@ -65,7 +65,8 @@ public class Flitter {
         }
         */
         // TODO Store this ArrayList< CrimeStructure>  into JSON, Remind that StructureList is different from AccountList, name as Middleman
-        toJson(structureList, "Middleman.json");
+        //toJson(structureList, "Middleman.json");
+        middleManJson(structureList);
 
         System.out.println("--------------Find Fearless Leader-----------------");
 
@@ -79,14 +80,154 @@ public class Flitter {
             }
         }
 
+        /*
         for(int i = 0; i< structureList.size(); i++){
             structureList.get(i).printAll();
         }
+        */
 
         //TODO TODO Store this ArrayList< CrimeStructure>  into JSON, Remind that StructureList is different from AccountList, name as FullStructure
-        toJson(structureList, "FullStructure.json");
+        //toJson(structureList, "FullStructure.json");
 
     }
+
+    public static void middleManJson(ArrayList<CrimeStructure> structureList){
+        ArrayList<ChunkProfile> allProfile = new ArrayList<ChunkProfile>();
+        ArrayList<ChunkLink> allLink = new ArrayList<ChunkLink>();
+
+        ChunkProfile chunkProfile;
+        ChunkLink chunkLink;
+        int count = 0;
+        for(CrimeStructure crimeStructure: structureList){
+
+            ///Employee
+            if(crimeStructure.getEmployee().getProfile().getId() != -1){
+                //// Add employee himself
+                chunkProfile = new ChunkProfile(crimeStructure.getEmployee().getProfile());
+                if(allProfile.contains(chunkProfile)){
+                    // don't put it in
+                }else{
+                    allProfile.add(chunkProfile);
+                }
+                // link list later
+                for(Profile p: crimeStructure.getEmployee().getContact().values()){
+                    chunkProfile = new ChunkProfile(p);
+                    if(allProfile.contains(p)){
+
+                    }else{
+                        allProfile.add(chunkProfile);
+                    }
+
+                    chunkLink = new ChunkLink(crimeStructure.getEmployee().getProfile(),p);
+                    if(allLink.contains(chunkLink)){
+
+                    }else{
+                        allLink.add(chunkLink);
+                    }
+                }
+            }
+
+            /////// Handler
+            for(Account account: crimeStructure.getHandler()){
+                if(account.getProfile().getId() != -1){
+                    chunkProfile = new ChunkProfile(account.getProfile());
+                    if(allProfile.contains(chunkProfile)){
+                        // don't put it in
+                    }else{
+                        allProfile.add(chunkProfile);
+                    }
+                }
+
+                for(Profile p: account.getContact().values()) {
+
+                    chunkProfile = new ChunkProfile(p);
+                    if(allProfile.contains(p)){
+
+                    }else{
+                        allProfile.add(chunkProfile);
+                    }
+
+                    chunkLink = new ChunkLink(account.getProfile(), p);
+                    if (allLink.contains(chunkLink)) {
+
+                    } else {
+                        allLink.add(chunkLink);
+                    }
+                }
+            }
+
+            ////// MiddleMan
+            if(crimeStructure.getMiddleMan().getProfile().getId() != -1){
+                chunkProfile = new ChunkProfile(crimeStructure.getMiddleMan().getProfile());
+                if(allProfile.contains(chunkProfile)){
+                    // don't put it in
+                }else{
+                    allProfile.add(chunkProfile);
+                }
+
+                for(Profile p: crimeStructure.getMiddleMan().getContact().values()){
+                    chunkProfile = new ChunkProfile(p);
+                    if(allProfile.contains(p)){
+
+                    }else{
+                        allProfile.add(chunkProfile);
+                    }
+
+                    chunkLink = new ChunkLink(crimeStructure.getMiddleMan().getProfile(), p);
+                    if (allLink.contains(chunkLink)) {
+
+                    } else {
+                        allLink.add(chunkLink);
+                    }
+                }
+            }
+
+            ///////    Fearless Leader
+            if (crimeStructure.getFearlessLeader().getId() != -1){
+                chunkProfile = new ChunkProfile(crimeStructure.getFearlessLeader().getProfile());
+                if(allProfile.contains(chunkProfile)){
+                    // don't put it in
+                }else{
+                    allProfile.add(chunkProfile);
+                }
+            }
+
+            for(Profile p: crimeStructure.getFearlessLeader().getContact().values()){
+                chunkProfile = new ChunkProfile(p);
+                if(allProfile.contains(p)){
+
+                }else{
+                    allProfile.add(chunkProfile);
+                }
+
+                chunkLink = new ChunkLink(crimeStructure.getFearlessLeader().getProfile(), p);
+                if (allLink.contains(chunkLink)) {
+
+                } else {
+                    allLink.add(chunkLink);
+                }
+            }
+
+
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+            try {
+                String chunkJson = gson.toJson(allProfile);
+                String linkJson = gson.toJson(allLink);
+                //write converted json data to a file named "file.json"
+                FileWriter writer = new FileWriter("Middleman_" + count +".json");
+                writer.write(chunkJson);
+                writer.write(linkJson);
+                writer.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            count++;
+        }
+
+    }
+
 
     public static void toJson(AccountList accountList, String fileName){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -104,18 +245,18 @@ public class Flitter {
     }
 
     public static void toJson(ArrayList<CrimeStructure> structureList, String fileName){
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            String json = gson.toJson(structureList);
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String json = gson.toJson(structureList);
 
-            try {
-                //write converted json data to a file named "file.json"
-                FileWriter writer = new FileWriter(fileName);
-                writer.write(json);
-                writer.close();
+        try {
+            //write converted json data to a file named "file.json"
+            FileWriter writer = new FileWriter(fileName);
+            writer.write(json);
+            writer.close();
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
