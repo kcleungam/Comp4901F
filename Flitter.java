@@ -22,7 +22,7 @@ public class Flitter {
         readContact(contactFile, accountList);
         international(accountList);
         //accountList.printAll();
-        //accountList.printContactOf(100);       //// works perfectly
+        accountList.printContactOf(4994);       //// works perfectly
 
         //TODO Store the accountList which store all account into JSON, name as AccountList
         //toJson(accountList, "AccountList.json");
@@ -43,7 +43,7 @@ public class Flitter {
         // TODO Please store it into   JSON, name as EmployeeList
         //toJson(employeeList, "EmployeeList.json");
 
-        EHMatchJson(employeeList,handlerList,38,42);
+        EHMatchJson(employeeList, handlerList, 38, 42);
 
 
         System.out.println("--------------Match Employee Handler set------------------");
@@ -58,6 +58,7 @@ public class Flitter {
 
         // TODO Store this ArrayList< CrimeStructure>  into JSON, Remind that StructureList is different from AccountList, name as EmployeeHandlerMatch
         //toJson(structureList,"EmployeeHandlerMatch.json");
+        middleManJson(structureList);
 
         System.out.println("-------------Find Middleman---------------");
 
@@ -69,7 +70,8 @@ public class Flitter {
         */
         // TODO Store this ArrayList< CrimeStructure>  into JSON, Remind that StructureList is different from AccountList, name as Middleman
         //toJson(structureList, "Middleman.json");
-        middleManJson(structureList);
+        excelFearlessLeader(structureList, true);
+        excelFearlessLeader(structureList, false);
 
         System.out.println("--------------Find Fearless Leader-----------------");
 
@@ -94,6 +96,42 @@ public class Flitter {
         fullStructureJson(structureList);
 
     }
+
+    public static void excelFearlessLeader(ArrayList<CrimeStructure> structureList, Boolean withBoolean){
+        int count = 0;
+        for(CrimeStructure crime: structureList) {
+            System.out.println(crime.getMiddleMan().getId());
+            if (withBoolean) {
+                try {
+                    FileWriter writer = new FileWriter("FearlessLeader_WithBoolean_"+ count + ".csv");
+                    writer.write("id,status,count\n");
+                    for(Profile profile: crime.getMiddleMan().getContact().values()){
+                        writer.write(profile.getId() + ","+profile.checkInternationalLink() + "," + profile.getContactSize());
+                        writer.write("\n");
+                    }
+
+                    writer.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                try {
+                    FileWriter writer = new FileWriter("FearlessLeader_" + count +".csv");
+                    writer.write("id,count\n");
+                    for(Profile profile: crime.getMiddleMan().getContact().values()){
+                        writer.write(profile.getId() + "," + profile.getContactSize());
+                        writer.write("\n");
+                    }
+
+                    writer.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            count++;
+        }
+    }
+
 
     public static void EHMatchJson(AccountList employeeList, AccountList handlerList, int rangeFrom, int rangeTo){
 
@@ -129,28 +167,6 @@ public class Flitter {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        /*
-        ArrayList<CrimeStructure> structureList = new ArrayList<CrimeStructure>();
-
-        for(Account eAccount: employee.getAccountList().values()){  //give one employee every time
-            CrimeStructure crimeStructure = new CrimeStructure();
-
-            for(Account hAccount: handler.getAccountList().values()){   // then check all handlers
-                if(eAccount.existContact(hAccount.getId())){
-                    crimeStructure.setEmployee(eAccount);
-                    crimeStructure.addHandler(hAccount);
-                }
-            }
-
-            if (crimeStructure.getHandler().size() >= 3){
-                structureList.add(crimeStructure);    // only need those structure with 1 employee and 3+ handler
-            }else{
-                crimeStructure = null;
-            }
-
-        }
-        return structureList;
-        */
     }
 
 

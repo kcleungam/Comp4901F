@@ -2,6 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee233f45-0f7b-48d4-9ce5-651c026ee1e0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FearlessLeader_0.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FearlessLeader_1.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FearlessLeader_WithBoolean_0.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FearlessLeader_WithBoolean_1.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flitter.java" afterPath="$PROJECT_DIR$/Flitter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Middleman_0.json" afterPath="$PROJECT_DIR$/Middleman_0.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Middleman_1.json" afterPath="$PROJECT_DIR$/Middleman_1.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Comp4901F.iws" />
@@ -27,8 +34,8 @@
       <file leaf-file-name="Flitter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Flitter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47858942">
-              <caret line="51" column="39" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.5093834">
+              <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -310,7 +317,13 @@
       <option name="project" value="LOCAL" />
       <updated>1448545756529</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Finish the Json use in parallel coordinate">
+      <created>1448545778954</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1448545778954</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -325,7 +338,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20751634" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24673203" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2934947" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -349,7 +362,8 @@
     <MESSAGE value="Finish E H match Json, name as MiddleMan , you can use it to find Middleman&#10;&#10;Finish Full Structure Json" />
     <MESSAGE value="forget to upload Json, upload now" />
     <MESSAGE value="Finish the data use in parallel coordinate" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish the data use in parallel coordinate" />
+    <MESSAGE value="Finish the Json use in parallel coordinate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish the Json use in parallel coordinate" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -362,8 +376,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Flitter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47858942">
-          <caret line="51" column="39" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.5093834">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
           <folding />
         </state>
       </provider>
