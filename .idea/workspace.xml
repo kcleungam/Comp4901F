@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee233f45-0f7b-48d4-9ce5-651c026ee1e0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/EmployeeHandler_38to42.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flitter.java" afterPath="$PROJECT_DIR$/Flitter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Comp4901F.iws" />
@@ -306,7 +304,13 @@
       <option name="project" value="LOCAL" />
       <updated>1448544084763</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Finish the data use in parallel coordinate">
+      <created>1448545756529</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1448545756529</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -344,7 +348,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Finish E H match Json, name as MiddleMan , you can use it to find Middleman&#10;&#10;Finish Full Structure Json" />
     <MESSAGE value="forget to upload Json, upload now" />
-    <option name="LAST_COMMIT_MESSAGE" value="forget to upload Json, upload now" />
+    <MESSAGE value="Finish the data use in parallel coordinate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish the data use in parallel coordinate" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
