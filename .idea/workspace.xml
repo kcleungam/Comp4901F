@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee233f45-0f7b-48d4-9ce5-651c026ee1e0" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\KaChun\Documents\GitHub\Comp4901F\.idea\libraries\gson_2_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\KaChun\Documents\GitHub\Comp4901F\Middleman.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Comp4901F.iml" afterPath="$PROJECT_DIR$/Comp4901F.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flitter.java" afterPath="$PROJECT_DIR$/Flitter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FullStructure_0.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FullStructure_1.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Middleman_0.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Middleman_1.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Comp4901F.iws" />
@@ -299,6 +296,13 @@
       <option name="number" value="Default" />
       <updated>1448525850111</updated>
     </task>
+    <task id="LOCAL-00001" summary="Finish E H match Json, name as MiddleMan , you can use it to find Middleman&#10;&#10;Finish Full Structure Json">
+      <created>1448543962849</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1448543962849</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -316,7 +320,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20751634" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5295008" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2934947" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -332,6 +336,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Finish E H match Json, name as MiddleMan , you can use it to find Middleman&#10;&#10;Finish Full Structure Json" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish E H match Json, name as MiddleMan , you can use it to find Middleman&#10;&#10;Finish Full Structure Json" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
