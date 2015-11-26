@@ -162,7 +162,7 @@ public class Flitter {
                 }
             }
 
-            writer.write("\n};");
+            writer.write("\n}");
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
