@@ -200,6 +200,7 @@ public class Flitter {
 
                 }
                 // then other contact
+                /*
                 for(Profile p: crimeStructure.getEmployee().getContact().values()){
                     chunkProfile = new ChunkProfile(p);
                     if(compare(allProfile,chunkProfile)){
@@ -215,6 +216,7 @@ public class Flitter {
                         allLink.add(chunkLink);
                     }
                 }
+                */
             }
             /////// Handler
             for(Account account: crimeStructure.getHandler()){
@@ -227,6 +229,7 @@ public class Flitter {
                     }
                 }
 
+                /*
                 for(Profile p: account.getContact().values()) {
 
                     chunkProfile = new ChunkProfile(p);
@@ -242,6 +245,7 @@ public class Flitter {
                         allLink.add(chunkLink);
                     }
                 }
+                */
             }
 
             ////// MiddleMan
@@ -252,6 +256,7 @@ public class Flitter {
                 } else{
                     allProfile.add(chunkProfile);
                 }
+                /*
                 for(Profile p: crimeStructure.getMiddleMan().getContact().values()){
                     chunkProfile = new ChunkProfile(p);
                     if(compare(allProfile,chunkProfile)){
@@ -267,6 +272,7 @@ public class Flitter {
                         allLink.add(chunkLink);
                     }
                 }
+                */
             }
 
             ///////    Fearless Leader
@@ -278,7 +284,7 @@ public class Flitter {
                     allProfile.add(chunkProfile);
                 }
             }
-
+            /*
             for(Profile p: crimeStructure.getFearlessLeader().getContact().values()){
                 chunkProfile = new ChunkProfile(p);
                 if(compare(allProfile,chunkProfile)){
@@ -294,9 +300,24 @@ public class Flitter {
                     allLink.add(chunkLink);
                 }
             }
-            try {
-                Thread.sleep(100);
-            }catch (Exception e){}
+            */
+
+            ///This is the function which take the basic structure without using all contact
+            for( Account account: crimeStructure.getHandler()){
+                if(crimeStructure.getEmployee().existContact(account.getProfile())){
+                    chunkLink = new ChunkLink(crimeStructure.getEmployee().getProfile(),account.getProfile());
+                    allLink.add(chunkLink);
+                }
+                if(crimeStructure.getMiddleMan().existContact(account.getProfile())){
+                    chunkLink = new ChunkLink( account.getProfile(), crimeStructure.getMiddleMan().getProfile());
+                    allLink.add(chunkLink);
+                }
+                if (crimeStructure.getFearlessLeader().existContact(crimeStructure.getMiddleMan().getProfile())){
+                    chunkLink = new ChunkLink(crimeStructure.getMiddleMan().getProfile(), crimeStructure.getFearlessLeader().getProfile());
+                    allLink.add(chunkLink);
+                }
+            }
+
 
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
