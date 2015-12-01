@@ -30,11 +30,11 @@
       <file leaf-file-name="Flitter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Flitter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5578704">
-              <caret line="310" column="51" selection-start-line="310" selection-start-column="51" selection-end-line="310" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.8217593">
+              <caret line="319" column="0" selection-start-line="319" selection-start-column="0" selection-end-line="319" selection-end-column="0" />
               <folding>
-                <element signature="e#13662#13676#0" expanded="true" />
-                <element signature="e#13736#13747#0" expanded="true" />
+                <element signature="e#13645#13659#0" expanded="true" />
+                <element signature="e#13719#13730#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -391,7 +391,13 @@
       <option name="project" value="LOCAL" />
       <updated>1448971271835</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="change the output of full structure, output basic structure only, remove all contact">
+      <created>1448976176836</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1448976176836</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -443,7 +449,8 @@
     <MESSAGE value="test git" />
     <MESSAGE value="change format&#10;Remove emplyee in handlers contact to generate Middleman Json" />
     <MESSAGE value="change format in full structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="change format in full structure" />
+    <MESSAGE value="change the output of full structure, output basic structure only, remove all contact" />
+    <option name="LAST_COMMIT_MESSAGE" value="change the output of full structure, output basic structure only, remove all contact" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -459,8 +466,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#13662#13676#0" expanded="true" />
-            <element signature="e#13736#13747#0" expanded="true" />
+            <element signature="e#13645#13659#0" expanded="true" />
+            <element signature="e#13719#13730#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -486,8 +493,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#13662#13676#0" expanded="true" />
-            <element signature="e#13736#13747#0" expanded="true" />
+            <element signature="e#13645#13659#0" expanded="true" />
+            <element signature="e#13719#13730#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -513,8 +520,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#13662#13676#0" expanded="true" />
-            <element signature="e#13736#13747#0" expanded="true" />
+            <element signature="e#13645#13659#0" expanded="true" />
+            <element signature="e#13719#13730#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -524,8 +531,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#13662#13676#0" expanded="true" />
-            <element signature="e#13736#13747#0" expanded="true" />
+            <element signature="e#13645#13659#0" expanded="true" />
+            <element signature="e#13719#13730#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -535,8 +542,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#13662#13676#0" expanded="true" />
-            <element signature="e#13736#13747#0" expanded="true" />
+            <element signature="e#13645#13659#0" expanded="true" />
+            <element signature="e#13719#13730#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -546,8 +553,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#13662#13676#0" expanded="true" />
-            <element signature="e#13736#13747#0" expanded="true" />
+            <element signature="e#13645#13659#0" expanded="true" />
+            <element signature="e#13719#13730#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -570,11 +577,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Flitter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5578704">
-          <caret line="310" column="51" selection-start-line="310" selection-start-column="51" selection-end-line="310" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.8217593">
+          <caret line="319" column="0" selection-start-line="319" selection-start-column="0" selection-end-line="319" selection-end-column="0" />
           <folding>
-            <element signature="e#13662#13676#0" expanded="true" />
-            <element signature="e#13736#13747#0" expanded="true" />
+            <element signature="e#13645#13659#0" expanded="true" />
+            <element signature="e#13719#13730#0" expanded="true" />
           </folding>
         </state>
       </provider>

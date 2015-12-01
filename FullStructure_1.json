@@ -37,11 +37,6 @@
     "value": 1
   },
   {
-    "source": "4980",
-    "target": "11",
-    "value": 1
-  },
-  {
     "source": "142",
     "target": "101",
     "value": 1
@@ -49,11 +44,6 @@
   {
     "source": "101",
     "target": "4980",
-    "value": 1
-  },
-  {
-    "source": "4980",
-    "target": "11",
     "value": 1
   },
   {

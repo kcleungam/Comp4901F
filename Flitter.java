@@ -312,12 +312,11 @@ public class Flitter {
                     chunkLink = new ChunkLink( account.getProfile(), crimeStructure.getMiddleMan().getProfile());
                     allLink.add(chunkLink);
                 }
-                if (crimeStructure.getFearlessLeader().existContact(crimeStructure.getMiddleMan().getProfile())){
-                    chunkLink = new ChunkLink(crimeStructure.getMiddleMan().getProfile(), crimeStructure.getFearlessLeader().getProfile());
-                    allLink.add(chunkLink);
-                }
             }
-
+            if (crimeStructure.getFearlessLeader().existContact(crimeStructure.getMiddleMan().getProfile())){
+                chunkLink = new ChunkLink(crimeStructure.getMiddleMan().getProfile(), crimeStructure.getFearlessLeader().getProfile());
+                allLink.add(chunkLink);
+            }
 
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
