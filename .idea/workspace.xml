@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee233f45-0f7b-48d4-9ce5-651c026ee1e0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChunkLink.java" afterPath="$PROJECT_DIR$/ChunkLink.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flitter.java" afterPath="$PROJECT_DIR$/Flitter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FullStructure_0.json" afterPath="$PROJECT_DIR$/FullStructure_0.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FullStructure_1.json" afterPath="$PROJECT_DIR$/FullStructure_1.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Middleman_0.json" afterPath="$PROJECT_DIR$/Middleman_0.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Middleman_1.json" afterPath="$PROJECT_DIR$/Middleman_1.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Middleman_2.json" afterPath="$PROJECT_DIR$/Middleman_2.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Middleman_3.json" afterPath="$PROJECT_DIR$/Middleman_3.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Middleman_4.json" afterPath="$PROJECT_DIR$/Middleman_4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Middleman_5.json" afterPath="$PROJECT_DIR$/Middleman_5.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Middleman_6.json" afterPath="$PROJECT_DIR$/Middleman_6.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Middleman_7.json" afterPath="$PROJECT_DIR$/Middleman_7.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Middleman_8.json" afterPath="$PROJECT_DIR$/Middleman_8.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Comp4901F.iws" />
@@ -40,8 +30,8 @@
       <file leaf-file-name="Flitter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Flitter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8449074">
-              <caret line="411" column="17" selection-start-line="411" selection-start-column="17" selection-end-line="411" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.5810185">
+              <caret line="308" column="43" selection-start-line="308" selection-start-column="43" selection-end-line="308" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -127,9 +117,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -150,6 +137,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -386,7 +376,13 @@
       <option name="project" value="LOCAL" />
       <updated>1448955912699</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="change format&#10;Remove emplyee in handlers contact to generate Middleman Json">
+      <created>1448961761099</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1448961761099</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -399,7 +395,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24673203" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -436,7 +432,8 @@
     <MESSAGE value="Finish the Json use in parallel coordinate" />
     <MESSAGE value="Complete all tasks&#10;Check if there is any problem" />
     <MESSAGE value="test git" />
-    <option name="LAST_COMMIT_MESSAGE" value="test git" />
+    <MESSAGE value="change format&#10;Remove emplyee in handlers contact to generate Middleman Json" />
+    <option name="LAST_COMMIT_MESSAGE" value="change format&#10;Remove emplyee in handlers contact to generate Middleman Json" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -447,6 +444,30 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Flitter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChunkProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChunkLink.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Flitter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -497,8 +518,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Flitter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8449074">
-          <caret line="411" column="17" selection-start-line="411" selection-start-column="17" selection-end-line="411" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.5810185">
+          <caret line="308" column="43" selection-start-line="308" selection-start-column="43" selection-end-line="308" selection-end-column="43" />
           <folding />
         </state>
       </provider>

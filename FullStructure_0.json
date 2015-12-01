@@ -1,5 +1,5 @@
 {
-"allprofiles":[
+"nodes":[
   {
     "id": "100",
     "name": "schaffter"
@@ -1525,7 +1525,7 @@
     "name": "quisquater"
   }
 ],
-"Links":[
+"links":[
   {
     "source": "100",
     "target": "14",

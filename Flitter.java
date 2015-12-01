@@ -306,10 +306,10 @@ public class Flitter {
                 //write converted json data to a file named "file.json"
                 FileWriter writer = new FileWriter("FullStructure_" + count +".json");
                 writer.write("{\n");
-                writer.write("\"allprofiles\":");
+                writer.write("\"nodes\":");
                 writer.write(chunkJson);
                 writer.write(",\n");
-                writer.write("\"Links\":");
+                writer.write("\"links\":");
                 writer.write(linkJson);
                 writer.write("\n}");
                 writer.close();

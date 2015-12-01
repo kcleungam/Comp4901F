@@ -1,5 +1,5 @@
 {
-"allprofiles":[
+"nodes":[
   {
     "id": "142",
     "name": "lafouge"
@@ -1201,7 +1201,7 @@
     "name": "sabelli"
   }
 ],
-"Links":[
+"links":[
   {
     "source": "142",
     "target": "2",
