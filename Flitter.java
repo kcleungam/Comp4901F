@@ -331,8 +331,10 @@ public class Flitter {
             ChunkProfile chunkProfile;
             ChunkLink chunkLink;
             /////// Handler
+
+
             for(Account account: crimeStructure.getHandler()){
-                if(account.getProfile().getId() != -1){
+                if(account.getProfile().getId() != -1 ){
                     chunkProfile = new ChunkProfile(account.getProfile());
                     if(compare(allProfile,chunkProfile)){
                         // don't put it in
@@ -342,7 +344,10 @@ public class Flitter {
                 }
 
                 for(Profile p: account.getContact().values()) {
-
+                    // Skip the contact handler-employee
+                    if(p.getId() == crimeStructure.getEmployee().getId()){
+                        continue;
+                    }
                     chunkProfile = new ChunkProfile(p);
                     if(compare(allProfile,chunkProfile)){
 
@@ -367,10 +372,10 @@ public class Flitter {
                 //write converted json data to a file named "file.json"
                 FileWriter writer = new FileWriter("Middleman_" + count +".json");
                 writer.write("{\n");
-                writer.write("\"allprofiles\":");
+                writer.write("\"nodes\":");
                 writer.write(chunkJson);
                 writer.write(",\n");
-                writer.write("\"Links\":");
+                writer.write("\"links\":");
                 writer.write(linkJson);
                 writer.write("\n}");
                 writer.close();
@@ -396,14 +401,13 @@ public class Flitter {
     public static Boolean compareLink(ArrayList<ChunkLink> list, ChunkLink chunkLink){
         Boolean same = false;
         for(ChunkLink link: list){
-            if(link.Source.equals(chunkLink.Source)){
-                if(link.Target.equals(chunkLink.Target)){
+            if(link.source.equals(chunkLink.source)){
+                if(link.target.equals(chunkLink.target)){
                     same = true;
                 }
-            }
+            } else if(link.source.equals((chunkLink.target))){
 
-            if(link.Source.equals((chunkLink.Target))){
-                if(link.Target.equals(chunkLink.Source)){
+                if(link.target.equals(chunkLink.source)){
                     same = true;
                 }
             }
