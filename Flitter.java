@@ -181,14 +181,14 @@ public class Flitter {
      */
 
     public static void fullStructureJson(ArrayList<CrimeStructure> structureList){
-        ArrayList<ChunkProfile> allProfile = new ArrayList<ChunkProfile>();
-        ArrayList<ChunkLink> allLink = new ArrayList<ChunkLink>();
 
-        ChunkProfile chunkProfile;
-        ChunkLink chunkLink;
         int count = 0;
         for(CrimeStructure crimeStructure: structureList){
+            ArrayList<ChunkProfile> allProfile = new ArrayList<ChunkProfile>();
+            ArrayList<ChunkLink> allLink = new ArrayList<ChunkLink>();
 
+            ChunkProfile chunkProfile;
+            ChunkLink chunkLink;
             ///Employee
             if(crimeStructure.getEmployee().getProfile().getId() != -1){
                 //// Add employee himself
@@ -197,6 +197,7 @@ public class Flitter {
                     // don't put it in
                 }else{
                     allProfile.add(chunkProfile);
+
                 }
                 // then other contact
                 for(Profile p: crimeStructure.getEmployee().getContact().values()){
@@ -208,14 +209,13 @@ public class Flitter {
                     }
 
                     chunkLink = new ChunkLink(crimeStructure.getEmployee().getProfile(),p);
-                    if(allLink.contains(chunkLink)){
+                    if(compareLink(allLink,chunkLink)){
 
                     }else{
                         allLink.add(chunkLink);
                     }
                 }
             }
-
             /////// Handler
             for(Account account: crimeStructure.getHandler()){
                 if(account.getProfile().getId() != -1){
@@ -231,13 +231,12 @@ public class Flitter {
 
                     chunkProfile = new ChunkProfile(p);
                     if(compare(allProfile,chunkProfile)){
-
                     }else{
                         allProfile.add(chunkProfile);
                     }
 
                     chunkLink = new ChunkLink(account.getProfile(), p);
-                    if (allLink.contains(chunkLink)) {
+                    if (compareLink(allLink,chunkLink)) {
 
                     } else {
                         allLink.add(chunkLink);
@@ -250,10 +249,9 @@ public class Flitter {
                 chunkProfile = new ChunkProfile(crimeStructure.getMiddleMan().getProfile());
                 if(compare(allProfile,chunkProfile)){
                     // don't put it in
-                }else{
+                } else{
                     allProfile.add(chunkProfile);
                 }
-
                 for(Profile p: crimeStructure.getMiddleMan().getContact().values()){
                     chunkProfile = new ChunkProfile(p);
                     if(compare(allProfile,chunkProfile)){
@@ -263,14 +261,13 @@ public class Flitter {
                     }
 
                     chunkLink = new ChunkLink(crimeStructure.getMiddleMan().getProfile(), p);
-                    if (allLink.contains(chunkLink)) {
+                    if (compareLink(allLink,chunkLink)) {
 
                     } else {
                         allLink.add(chunkLink);
                     }
                 }
             }
-
 
             ///////    Fearless Leader
             if (crimeStructure.getFearlessLeader().getId() != -1){
@@ -284,20 +281,22 @@ public class Flitter {
 
             for(Profile p: crimeStructure.getFearlessLeader().getContact().values()){
                 chunkProfile = new ChunkProfile(p);
-                if(allProfile.contains(chunkProfile)){
+                if(compare(allProfile,chunkProfile)){
 
                 }else{
                     allProfile.add(chunkProfile);
                 }
 
                 chunkLink = new ChunkLink(crimeStructure.getFearlessLeader().getProfile(), p);
-                if (allLink.contains(chunkLink)) {
+                if (compareLink(allLink,chunkLink)) {
 
                 } else {
                     allLink.add(chunkLink);
                 }
             }
-
+            try {
+                Thread.sleep(100);
+            }catch (Exception e){}
 
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
@@ -324,43 +323,13 @@ public class Flitter {
     }
 
     public static void middleManJson(ArrayList<CrimeStructure> structureList){
-        ArrayList<ChunkProfile> allProfile = new ArrayList<ChunkProfile>();
-        ArrayList<ChunkLink> allLink = new ArrayList<ChunkLink>();
-
-        ChunkProfile chunkProfile;
-        ChunkLink chunkLink;
         int count = 0;
         for(CrimeStructure crimeStructure: structureList){
+            ArrayList<ChunkProfile> allProfile = new ArrayList<ChunkProfile>();
+            ArrayList<ChunkLink> allLink = new ArrayList<ChunkLink>();
 
-            ///Employee
-            /*
-            if(crimeStructure.getEmployee().getProfile().getId() != -1){
-                //// Add employee himself
-                chunkProfile = new ChunkProfile(crimeStructure.getEmployee().getProfile());
-                if(compare(allProfile,chunkProfile)){
-                    // don't put it in
-                }else{
-                    allProfile.add(chunkProfile);
-                }
-                // link list later
-                for(Profile p: crimeStructure.getEmployee().getContact().values()){
-                    chunkProfile = new ChunkProfile(p);
-                    if(compare(allProfile,chunkProfile)){
-
-                    }else{
-                        allProfile.add(chunkProfile);
-                    }
-
-                    chunkLink = new ChunkLink(crimeStructure.getEmployee().getProfile(),p);
-                    if(allLink.contains(chunkLink)){
-
-                    }else{
-                        allLink.add(chunkLink);
-                    }
-                }
-            }
-            */
-
+            ChunkProfile chunkProfile;
+            ChunkLink chunkLink;
             /////// Handler
             for(Account account: crimeStructure.getHandler()){
                 if(account.getProfile().getId() != -1){
@@ -382,68 +351,13 @@ public class Flitter {
                     }
 
                     chunkLink = new ChunkLink(account.getProfile(), p);
-                    if (allLink.contains(chunkLink)) {
+                    if (compareLink(allLink,chunkLink)) {
 
                     } else {
                         allLink.add(chunkLink);
                     }
                 }
             }
-            /*
-            ////// MiddleMan
-            if(crimeStructure.getMiddleMan().getProfile().getId() != -1){
-                chunkProfile = new ChunkProfile(crimeStructure.getMiddleMan().getProfile());
-                if(compare(allProfile,chunkProfile)){
-                    // don't put it in
-                }else{
-                    allProfile.add(chunkProfile);
-                }
-
-                for(Profile p: crimeStructure.getMiddleMan().getContact().values()){
-                    chunkProfile = new ChunkProfile(p);
-                    if(compare(allProfile,chunkProfile)){
-
-                    }else{
-                        allProfile.add(chunkProfile);
-                    }
-
-                    chunkLink = new ChunkLink(crimeStructure.getMiddleMan().getProfile(), p);
-                    if (allLink.contains(chunkLink)) {
-
-                    } else {
-                        allLink.add(chunkLink);
-                    }
-                }
-            }
-            */
-
-            /*
-            ///////    Fearless Leader
-            if (crimeStructure.getFearlessLeader().getId() != -1){
-                chunkProfile = new ChunkProfile(crimeStructure.getFearlessLeader().getProfile());
-                if(compare(allProfile,chunkProfile)){
-                    // don't put it in
-                }else{
-                    allProfile.add(chunkProfile);
-                }
-            }
-
-            for(Profile p: crimeStructure.getFearlessLeader().getContact().values()){
-                chunkProfile = new ChunkProfile(p);
-                if(allProfile.contains(chunkProfile)){
-
-                }else{
-                    allProfile.add(chunkProfile);
-                }
-
-                chunkLink = new ChunkLink(crimeStructure.getFearlessLeader().getProfile(), p);
-                if (allLink.contains(chunkLink)) {
-
-                } else {
-                    allLink.add(chunkLink);
-                }
-            }
-            */
 
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
@@ -472,13 +386,30 @@ public class Flitter {
     public static Boolean compare(ArrayList<ChunkProfile> list,ChunkProfile chunkProfile){
         Boolean same = false;
         for(ChunkProfile profile: list){
-            if(profile.id == chunkProfile.id){
+            if(profile.id.equals(chunkProfile.id)){
                 same = true;
+            }
+        }
+        return same;
+    }
+
+    public static Boolean compareLink(ArrayList<ChunkLink> list, ChunkLink chunkLink){
+        Boolean same = false;
+        for(ChunkLink link: list){
+            if(link.Source.equals(chunkLink.Source)){
+                if(link.Target.equals(chunkLink.Target)){
+                    same = true;
+                }
+            }
+
+            if(link.Source.equals((chunkLink.Target))){
+                if(link.Target.equals(chunkLink.Source)){
+                    same = true;
+                }
             }
         }
 
         return same;
-
     }
 
 
