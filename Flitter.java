@@ -91,6 +91,17 @@ public class Flitter {
         }
         */
 
+        for(CrimeStructure crimeStructure: structureList){
+            System.out.println("======================= Here is the crime structure===============================");
+            System.out.println("Employee: " + crimeStructure.getEmployee().getId() + " " + crimeStructure.getEmployee().getName());
+            for(Account account: crimeStructure.getHandler()){
+                System.out.println("Handler: " + account.getId() + " " + account.getName());
+            }
+            System.out.println("Middleman: " + crimeStructure.getMiddleMan().getId() + " " + crimeStructure.getMiddleMan().getName());
+            System.out.println("Fearless Leader: " + crimeStructure.getFearlessLeader().getId() + " " + crimeStructure.getFearlessLeader().getName());
+            System.out.println("======================= End of structure===============================");
+        }
+
         //TODO TODO Store this ArrayList< CrimeStructure>  into JSON, Remind that StructureList is different from AccountList, name as FullStructure
         //toJson(structureList, "FullStructure.json");
         fullStructureJson(structureList);
