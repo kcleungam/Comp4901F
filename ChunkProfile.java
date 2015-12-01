@@ -2,11 +2,11 @@
  * Created by Krauser on 26/11/2015.
  */
 public class ChunkProfile {
-        int id;
+        String id;
         String name;
 
         public ChunkProfile(Profile profile){
-            id = profile.getId();
+            id = String.valueOf(profile.getId());
             name = profile.getName();
         }
 }
