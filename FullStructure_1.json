@@ -1,0 +1,65 @@
+{
+"nodes":[
+  {
+    "id": "142",
+    "name": "lafouge"
+  },
+  {
+    "id": "38",
+    "name": "krintz"
+  },
+  {
+    "id": "101",
+    "name": "lonning"
+  },
+  {
+    "id": "318",
+    "name": "formenti"
+  },
+  {
+    "id": "4980",
+    "name": "rosch"
+  },
+  {
+    "id": "11",
+    "name": "cornell"
+  }
+],
+"links":[
+  {
+    "source": "142",
+    "target": "38",
+    "value": 1
+  },
+  {
+    "source": "38",
+    "target": "4980",
+    "value": 1
+  },
+  {
+    "source": "142",
+    "target": "101",
+    "value": 1
+  },
+  {
+    "source": "101",
+    "target": "4980",
+    "value": 1
+  },
+  {
+    "source": "142",
+    "target": "318",
+    "value": 1
+  },
+  {
+    "source": "318",
+    "target": "4980",
+    "value": 1
+  },
+  {
+    "source": "4980",
+    "target": "11",
+    "value": 1
+  }
+]
+}
