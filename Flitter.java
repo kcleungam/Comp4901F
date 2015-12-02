@@ -159,15 +159,15 @@ public class Flitter {
                 for(Account hAccount: handlerList.getAccountList().values()){
                     if(eAccount.existContact(hAccount.getId())){
                         if(firstElement == true){
-                            writer.write(hAccount.getId()+ ":{");
+                            writer.write("\"" + hAccount.getId() + " " + hAccount.getName()+"\"" + ":{");
                             writer.write("employee:");
-                            writer.write(  "\"" +  eAccount.getId()+  "\"}");
+                            writer.write(  "\"" +  eAccount.getId() + " " + eAccount.getName()+  "\"}");
                             firstElement = false;
                         }else{
                             writer.write(",\n");
-                            writer.write(hAccount.getId()+ ":{");
+                            writer.write("\"" + hAccount.getId()+ " " + hAccount.getName()+ "\"" + ":{");
                             writer.write("employee:");
-                            writer.write("\"" + eAccount.getId() + "\"}");
+                            writer.write("\"" + eAccount.getId()+ " " + eAccount.getName() + "\"}");
                         }
                     }
                 }
