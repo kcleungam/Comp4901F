@@ -613,7 +613,11 @@ function rotateLabels() {
 }
 
 function dimensionLabels(d) {
-  return d in __.dimensionTitles ? __.dimensionTitles[d] : d;  // dimension display names
+  var name = d in __.dimensionTitles ? __.dimensionTitles[d] : d;  // dimension display names
+  if (name == "key"){
+    name = "handler";
+  }
+  return name;
 }
 
 pc.createAxes = function() {
