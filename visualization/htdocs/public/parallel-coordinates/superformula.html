@@ -32,35 +32,74 @@ path {
  
 </style>
 <div id="superformula"></div>
-<div id="example" class="parcoords" style="width:960px;height:320px"></div>
+<div id="example" class="parcoords" style="width:960px;height:900px"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="lib/d3.min.js"></script>
 <script src="d3.parcoords.js"></script>
 <link rel="stylesheet" type="text/css" href="d3.parcoords.css">
 <script src="lib/superformula.js"></script>
 <script>
- 
+
+    var reader = new FileReader();
+    reader.onload = function(event) {
+        var contents = event.target.result;
+        console.log("File contents: " + contents);
+    };
+
+    reader.onerror = function(event) {
+        console.error("File could not be read! Code " + event.target.error.code);
+    };
+
 var types = {
-  asterisk: {m: 12, n1: .3, n2: 0, n3: 10, a: 1, b: 1},
-  bean: {m: 2, n1: 1, n2: 4, n3: 8, a: 1, b: 1},
-  butterfly: {m: 3, n1: 1, n2: 6, n3: 2, a: .6, b: 1},
-  circle: {m: 4, n1: 2, n2: 2, n3: 2, a: 1, b: 1},
-  clover: {m: 6, n1: .3, n2: 0, n3: 10, a: 1, b: 1},
-  cloverFour: {m: 8, n1: 10, n2: -1, n3: -8, a: 1, b: 1},
-  cross: {m: 8, n1: 1.3, n2: .01, n3: 8, a: 1, b: 1},
-  diamond: {m: 4, n1: 1, n2: 1, n3: 1, a: 1, b: 1},
-  drop: {m: 1, n1: .5, n2: .5, n3: .5, a: 1, b: 1},
-  ellipse: {m: 4, n1: 2, n2: 2, n3: 2, a: 9, b: 6},
-  gear: {m: 19, n1: 100, n2: 50, n3: 50, a: 1, b: 1},
-  heart: {m: 1, n1: .8, n2: 1, n3: -8, a: 1, b: .18},
-  heptagon: {m: 7, n1: 1000, n2: 400, n3: 400, a: 1, b: 1},
-  hexagon: {m: 6, n1: 1000, n2: 400, n3: 400, a: 1, b: 1},
-  malteseCross: {m: 8, n1: .9, n2: .1, n3: 100, a: 1, b: 1},
-  pentagon: {m: 5, n1: 1000, n2: 600, n3: 600, a: 1, b: 1},
-  rectangle: {m: 4, n1: 100, n2: 100, n3: 100, a: 2, b: 1},
-  roundedStar: {m: 5, n1: 2, n2: 7, n3: 7, a: 1, b: 1},
-  square: {m: 4, n1: 100, n2: 100, n3: 100, a: 1, b: 1},
-  star: {m: 5, n1: 30, n2: 100, n3: 100, a: 1, b: 1},
-  triangle: {m: 3, n1: 100, n2: 200, n3: 200, a: 1, b: 1}
+    "142\b":{employee:"38\b"},
+    "488\b":{employee:"60\b"},
+    "140\b":{employee:"63\b"},
+    "194\b":{employee:"63\b"},
+    "59\b":{employee:"66\b"},
+    "134\b":{employee:"66\b"},
+    "213\b":{employee:"66\b"},
+    "149\b":{employee:"68\b"},
+    "59\b":{employee:"79\b"},
+    "168\b":{employee:"79\b"},
+    "224\b":{employee:"79\b"},
+    "359\b":{employee:"79\b"},
+    "184\b":{employee:"92\b"},
+    "232\b":{employee:"92\b"},
+    "194\b":{employee:"100\b"},
+    "261\b":{employee:"100\b"},
+    "563\b":{employee:"100\b"},
+    "19\b":{employee:"108\b"},
+    "195\b":{employee:"108\b"},
+    "183\b":{employee:"115\b"},
+    "513\b":{employee:"115\b"},
+    "152\b":{employee:"140\b"},
+    "197\b":{employee:"140\b"},
+    "209\b":{employee:"140\b"},
+    "38\b":{employee:"142\b"},
+    "101\b":{employee:"142\b"},
+    "318\b":{employee:"142\b"},
+    "71\b":{employee:"156\b"},
+    "147\b":{employee:"156\b"},
+    "172\b":{employee:"156\b"},
+    "215\b":{employee:"156\b"},
+    "126\b":{employee:"160\b"},
+    "159\b":{employee:"160\b"},
+    "140\b":{employee:"171\b"},
+    "182\b":{employee:"171\b"},
+    "183\b":{employee:"171\b"},
+    "75\b":{employee:"175\b"},
+    "133\b":{employee:"175\b"},
+    "220\b":{employee:"175\b"},
+    "215\b":{employee:"192\b"},
+    "278\b":{employee:"192\b"},
+    "541\b":{employee:"192\b"},
+    "19\b":{employee:"224\b"},
+    "79\b":{employee:"224\b"},
+    "19\b":{employee:"228\b"},
+    "38\b":{employee:"239\b"},
+    "75\b":{employee:"275\b"},
+    "208\b":{employee:"378\b"},
+    "600\b":{employee:"378\b"}
 };
 
 var data = d3.entries(types).map(function(d) {
@@ -68,13 +107,13 @@ var data = d3.entries(types).map(function(d) {
   val.key = d.key;
   return val;
 });
- 
+
 var format = d3.format(".4n"),
     scale = d3.scale.linear().domain([-10, 20, 1000]).range([0, 800, 1000]);
- 
+
 var svg = d3.select("#superformula").append("svg")
-    .attr("width", 960)
-    .attr("height", 500)
+    .attr("width", 0)
+    .attr("height", 0)
     .append("g")
     .attr("transform", "translate(70,70)");
 
@@ -90,18 +129,23 @@ var parcoords = d3.parcoords()("#example")
        .style("opacity", 1);
   });
 
-var shape = d3.superformula()
-    .size(5000)
-    .segments(3600);
- 
+//var shape = d3.superformula()
+//    .size(5000)
+//    .segments(3600);
+
 var path = svg
     .selectAll("path")
     .data(d3.entries(types))
     .enter().append("path")
     .attr("transform", function(d,i) { return "translate(" + (140*(i%7)) + "," + (140*Math.floor(i/7)) + ")" })
-    .attr("d", function(d) { return shape.type(d.key)(); })
+//    .attr("d", function(d) { return shape.type(d.key)(); })
     .on("mouseover", function(d,i) {
       parcoords.highlight([data[i]]);
     })
     .on("mouseout", parcoords.unhighlight);
+
+//var key_axis = element(by.css('.axis:last'));
+//
+//.textContent
+
 </script>
