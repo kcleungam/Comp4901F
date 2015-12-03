@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+    .link {
+        stroke: #DC143C;
+    }
+
+    .node text {
+        pointer-events: none;
+        font: 15px sans-serif;
+    }
+
+</style>
+<body>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script>
+
+    var width = 1126,
+            height = 707
+
+    var svg = d3.select("body").append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+    svg.append("image")       // attach a rectangle
+            .attr("xlink:href","map.jpg")
+            .attr("x", 0)         // position the left of the rectangle
+            .attr("y", 0)          // position the top of the rectangle
+            .attr("height", 707)    // set the height
+            .attr("width", 1126);
+
+    var force = d3.layout.force()
+            .gravity(.05)
+            .distance(100)
+            .charge(-100)
+            .size([width, height]);
+
+    d3.json("FullStructure_1_new_idea.json", function(error, json) {
+        if (error) throw error;
+        var edges = [];
+        json.links.forEach(function(e) {
+            var sourceNode = json.nodes.filter(function(n) { return n.id === e.source; })[0],
+                    targetNode = json.nodes.filter(function(n) { return n.id === e.target; })[0];
+
+            edges.push({source: sourceNode, target: targetNode, value: e.value});
+        });
+
+        force
+                .nodes(json.nodes)
+                .links(edges)
+                .start();
+
+        var link = svg.selectAll(".link")
+                .data(edges)
+                .enter().append("line")
+                .attr("class", "link")
+                .attr("color","red");
+
+        var node = svg.selectAll(".node")
+                .data(json.nodes)
+                .enter().append("g")
+                .attr("class", "node")
+                .call(force.drag);
+
+        node.append("image")
+                .attr("xlink:href", "leader.png")
+                .attr("x", -8)
+                .attr("y", -8)
+                .attr("width", function(d) {
+                    if (d.type == "city") {return 0}
+                    else {return 20}
+                }
+        )
+                .attr("height", function(d) {
+                    if (d.type == "city") {return 0}
+                    else {return 20}
+                }
+        );
+        //test
+//        node.append("image")
+//                .attr("xlink:href", function(d) {
+//                    if (d.identity == "0") {return "leader.png"}
+//                    else if(d.identity == "1"){return "twitter.jpg"}
+//                    else 	{ return "https://github.com/favicon.ico" }
+//                    ;})
+//                .attr("x", -8)
+//                .attr("y", -8)
+//                .attr("width", 25)
+//                .attr("height", 25);
+
+        node.append("text")
+                .attr("dx", 12)
+                .attr("dy", ".35em")
+                .text(function(d) { return d.name });
+
+        force.on("tick", function(e) {
+            link.attr("x1", function(d) {
+//                if(d.source.city == "Kouvnic"){return 370;}
+//                else if(d.source.city == "Kannvic"){return 300;}
+//                else {return 420;}
+                return d.source.x;
+            })
+                    .attr("y1", function(d) {
+//                        if(d.source.city == "Kouvnic"){return 100;}
+//                        else if(d.source.city == "Kannvic"){return 245;}
+//                        {return 320;}
+                        return d.source.y;
+                    })
+                    .attr("x2", function(d) {
+//                        if(d.target.city == "Kouvnic"){return 370;}
+//                        else if(d.target.city == "Kannvic"){return 300;}
+//                        {return 420;}
+                        return d.target.x;
+                    })
+                    .attr("y2", function(d) {
+//                        if(d.target.city == "Kouvnic"){return 100;}
+//                        else if(d.target.city == "Kannvic"){return 245;}
+//                        {return 320;}
+                        return d.target.y;
+                    });
+
+            node.attr("transform", function(d) {
+//                if(d.city == "Kouvnic"){return "translate(" + 370 + "," + 100 + ")";}
+//                else if(d.city == "Kannvic"){return "translate(" + 300 + "," + 245 + ")";}
+//                {return "translate(" + 420 + "," + 320 + ")";}
+                return "translate(" + d.x + "," + d.y + ")";
+            });
+        });
+
+    });
+
+</script>

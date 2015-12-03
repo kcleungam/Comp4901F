@@ -1,0 +1,89 @@
+{
+"nodes":[
+  {
+    "id": "142",
+    "name": "lafouge(Employee)",
+    "city":"Prounov",
+    "x":420,
+    "y":320,
+    "fixed":true
+  },
+  {
+    "id": "38",
+    "name": "kafouge(Handler)",
+    "city":"koul",
+    "x":340,
+    "y":350,
+    "fixed":true
+  },
+  {
+    "id": "101",
+    "name": "lonning(Handler)",
+    "city":"koul",
+    "x":340,
+    "y":350,
+    "fixed":true
+  },
+  {
+    "id": "318",
+    "name": "formenti(Handler)",
+    "city":"koul",
+    "x":340,
+    "y":350,
+    "fixed":true
+  },
+  {
+    "id": "4980",
+    "name": "rosch(Middleman)",
+    "city":"koul",
+    "x":340,
+    "y":350,
+    "fixed":true
+  },
+  {
+    "id": "11",
+    "name": "cornell(Fearless Leader)",
+    "city": "Ryzkland",
+    "x":540,
+    "y":95,
+    "fixed":true
+  }
+],
+"links":[
+  {
+    "source": "142",
+    "target": "38",
+    "value": 1
+  },
+  {
+    "source": "38",
+    "target": "4980",
+    "value": 1
+  },
+  {
+    "source": "142",
+    "target": "101",
+    "value": 1
+  },
+  {
+    "source": "101",
+    "target": "4980",
+    "value": 1
+  },
+  {
+    "source": "142",
+    "target": "318",
+    "value": 1
+  },
+  {
+    "source": "318",
+    "target": "4980",
+    "value": 1
+  },
+  {
+    "source": "4980",
+    "target": "11",
+    "value": 1
+  }
+]
+}

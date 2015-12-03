@@ -1,0 +1,96 @@
+{
+"nodes":[
+  {
+    "id": "100",
+    "name": "schaffter(Employee)",
+    "city": "Prounov",
+    "type": "people"
+  },
+  {
+    "id": "194",
+    "name": "reitenspies(Handler)",
+    "city":"Prounov",
+    "type": "people"
+  },
+  {
+    "id": "261",
+    "name": "kushnir(Handler)",
+    "city": "Prounov",
+    "type": "people"
+  },
+  {
+    "id": "563",
+    "name": "pettersson(Handler)",
+    "city": "Prounov",
+    "type": "people"
+  },
+  {
+    "id": "4994",
+    "name": "good(Middleman)",
+    "city": "",
+    "type": "people"
+  },
+  {
+    "id": "4",
+    "name": "szemeredi(Fearless_leader)",
+    "city": "",
+    "type": "people"
+  },
+  {
+    "id": "10000",
+    "name": "",
+    "type": "city",
+    "x":400,
+    "y":330,
+    "fixed":true
+  },
+  {
+    "id": "10001",
+    "name": "",
+    "type": "city",
+    "x":280,
+    "y":255,
+    "fixed":true
+  },
+  {
+    "id": "10002",
+    "name": "",
+    "type": "city",
+    "x":350,
+    "y":113,
+    "fixed":true
+  }
+],
+"links":[
+  {
+    "source": "100",
+    "target": "10000",
+    "value": 1
+  },
+  {
+    "source": "194",
+    "target": "10000",
+    "value": 1
+  },
+  {
+    "source": "261",
+    "target": "10000",
+    "value": 1
+  },
+  {
+    "source": "563",
+    "target": "10000",
+    "value": 1
+  },
+  {
+    "source": "4994",
+    "target": "10001",
+    "value": 1
+  },
+  {
+    "source": "4",
+    "target": "10002",
+    "value": 1
+  }
+]
+}
