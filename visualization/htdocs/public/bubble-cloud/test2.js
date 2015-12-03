@@ -1,4 +1,4 @@
-d3.csv("data/FearlessLeader_WithBoolean_0.csv", function(data) {
+d3.csv("data/FearlessLeader_WithBoolean_1.csv", function(data) {
     console.log(data);
     var dataobj = { children: data };
     var pack = d3.layout.pack().padding(2).size([800,600]).sort(function(a,b) { return b.count - a.count; })
