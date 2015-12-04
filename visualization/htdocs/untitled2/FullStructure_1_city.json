@@ -2,7 +2,7 @@
 "nodes":[
   {
     "id": "142",
-    "name": "lafouge(Employee)",
+    "name": "Employee",
     "city":"Prounov",
     "x":420,
     "y":320,
@@ -10,39 +10,39 @@
   },
   {
     "id": "38",
-    "name": "kafouge(Handler)",
+    "name": "Handler",
     "city":"koul",
-    "x":340,
-    "y":350,
+    "x":386,
+    "y":375,
     "fixed":true
   },
   {
     "id": "101",
-    "name": "lonning(Handler)",
+    "name": "Handler",
     "city":"koul",
-    "x":340,
+    "x":260,
     "y":350,
     "fixed":true
   },
   {
     "id": "318",
-    "name": "formenti(Handler)",
+    "name": "Handler",
     "city":"koul",
-    "x":340,
-    "y":350,
+    "x":300,
+    "y":390,
     "fixed":true
   },
   {
     "id": "4980",
-    "name": "rosch(Middleman)",
+    "name": "Middleman",
     "city":"koul",
-    "x":340,
-    "y":350,
+    "x":280,
+    "y":330,
     "fixed":true
   },
   {
     "id": "11",
-    "name": "cornell(Fearless Leader)",
+    "name": "Fearless Leader",
     "city": "Ryzkland",
     "x":540,
     "y":95,

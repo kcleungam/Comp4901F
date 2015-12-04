@@ -2,7 +2,8 @@
 "nodes":[
   {
     "id": "100",
-    "name": "schaffter"
+    "name": "schaffter(Employee)",
+    "identity":"0"
   },
   {
     "id": "14",
@@ -42,11 +43,13 @@
   },
   {
     "id": "194",
-    "name": "reitenspies"
+    "name": "reitenspies(Handler)",
+    "identity":"0"
   },
   {
     "id": "261",
-    "name": "kushnir"
+    "name": "kushnir(Handler)",
+    "identity":"0"
   },
   {
     "id": "268",
@@ -78,7 +81,8 @@
   },
   {
     "id": "563",
-    "name": "pettersson"
+    "name": "pettersson(Handler)",
+    "identity":"0"
   },
   {
     "id": "792",
@@ -286,7 +290,8 @@
   },
   {
     "id": "4994",
-    "name": "good"
+    "name": "good(Middleman)",
+    "identity":"0"
   },
   {
     "id": "5376",
@@ -546,7 +551,8 @@
   },
   {
     "id": "4",
-    "name": "szemeredi"
+    "name": "szemeredi(Fearless_leader)",
+    "identity":"0"
   },
   {
     "id": "1612",

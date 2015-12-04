@@ -4,6 +4,7 @@
 
     .link {
         stroke: #DC143C;
+        stroke-width: 2;
     }
 
     .node text {
@@ -36,7 +37,7 @@
             .charge(-100)
             .size([width, height]);
 
-    d3.json("FullStructure_0_new_idea.json", function(error, json) {
+    d3.json("FullStructure_0_city.json", function(error, json) {
         if (error) throw error;
         var edges = [];
         json.links.forEach(function(e) {

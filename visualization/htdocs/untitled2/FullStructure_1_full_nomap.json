@@ -2,7 +2,8 @@
 "nodes":[
   {
     "id": "142",
-    "name": "lafouge"
+    "name": "lafouge(Employee)",
+    "identity":"0"
   },
   {
     "id": "2",
@@ -18,15 +19,18 @@
   },
   {
     "id": "38",
-    "name": "krintz"
+    "name": "krintz(Handler)",
+    "identity":"0"
   },
   {
     "id": "101",
-    "name": "lonning"
+    "name": "lonning(Handler)",
+    "identity":"0"
   },
   {
     "id": "318",
-    "name": "formenti"
+    "name": "formenti(Handler)",
+    "identity":"0"
   },
   {
     "id": "371",
@@ -302,7 +306,8 @@
   },
   {
     "id": "4980",
-    "name": "rosch"
+    "name": "rosch(Middleman)",
+    "identity":"0"
   },
   {
     "id": "5894",
@@ -318,7 +323,8 @@
   },
   {
     "id": "11",
-    "name": "cornell"
+    "name": "cornell(Fearless Leader)",
+    "identity":"0"
   },
   {
     "id": "83",
