@@ -5,9 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>template</title>
     <link rel="stylesheet" type="text/css" href="test.css">
+	<script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
+	<script type="text/javascript" src="test.js"></script>
+	<script>
+		function change(number){
+			var n=parseInt(number);
+			if(n==1||n==2){
+				d3.selectAll("#root > svg > *").remove();
+				document.getElementById("title").innerHTML="Fearless Leader "+n;
+				f(n);
+			}
+		}
+	</script>
     </head>
-    <body><div id="root"><svg width="100%" height="600px" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid"></svg></div>
-        <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
-        <script type="text/javascript" src="test.js"></script>
+    <body>
+		<!-- title, legend -->
+		<div id="info">
+		<center><H1 id="title">Fearless Leader</H1></center>
+			<svg width="100%" height="25px" viewBox="0 0 800 25" preserveAspectRatio="xMidYMid">
+				
+			</svg>
+		</div>
+		<!-- bubble-cloud -->
+		<div id="root"><svg width="100%" height="600px" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid"></svg></div>
+		<div id="control">
+			<center>
+				<button type="button" onclick="change(1)">1</button>
+				<button type="button" onclick="change(2)">2</button>
+			</center>
+		<div>
+        <!--<script type="text/javascript" src="test2.js"></script>-->
     </body>
 </html>
