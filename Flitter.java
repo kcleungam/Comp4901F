@@ -3,6 +3,7 @@ import com.google.gson.GsonBuilder;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
@@ -105,6 +106,72 @@ public class Flitter {
         //TODO TODO Store this ArrayList< CrimeStructure>  into JSON, Remind that StructureList is different from AccountList, name as FullStructure
         //toJson(structureList, "FullStructure.json");
         fullStructureJson(structureList);
+        fullStructuretxt(structureList);
+
+    }
+
+    public static void fullStructuretxt(ArrayList<CrimeStructure> structureList){
+
+        ///This function is for question 2 in MC2
+
+        int count = 1;
+        HashMap<Integer,String> check = new HashMap<>();
+        for(CrimeStructure crime: structureList){
+            try {
+                //First write the structure
+                FileWriter writer = new FileWriter("Flitter"+ count + ".txt");
+                writer.write("ID\tRole\tFlitter Name\n");
+                writer.write(crime.getEmployee().getId() + "\t" +"Employee" + "\t" + crime.getEmployee().getName() + "\n");
+                check.put(crime.getEmployee().getId(), crime.getEmployee().getName());
+                for(Account account: crime.getHandler()){
+                    writer.write(account.getId() + "\t" + "Handler" + "\t" + account.getName() + "\n");
+                    check.put(account.getId(), account.getName());
+                }
+                writer.write(crime.getMiddleMan().getId() + "\t" + "Middleman" + "\t" + crime.getMiddleMan().getName() + "\n");
+                check.put(crime.getMiddleMan().getId(), crime.getMiddleMan().getName());
+                writer.write(crime.getFearlessLeader().getId() + "\t" + "Fearless Leader" + "\t" + crime.getFearlessLeader().getName() + "\n");
+                check.put(crime.getFearlessLeader().getId(), crime.getFearlessLeader().getName());
+
+                ///// Then write the others
+                for(Profile profile: crime.getFearlessLeader().getContact().values()){
+                    if(check.containsKey(profile.getId())){
+                        continue;
+                    }else {
+                        if(profile.checkLiveForeign() == true){
+                            writer.write(profile.getId() + "\t" + "Leader's International Contact" + "\t" + profile.getName() + "\n");
+                        }else{continue;}
+                    }
+                }
+
+                for (Profile profile: crime.getEmployee().getContact().values()){
+                    if(check.containsKey(profile.getId())){
+                        continue;
+                    }else {
+                        writer.write(profile.getId() + "\t" + " Related Other" + "\t" + profile.getName() + "\n");
+                    }
+                }
+                for(Account account: crime.getHandler()){
+                    for(Profile profile: account.getContact().values()){
+                        if(check.containsKey(profile.getId())){
+                            continue;
+                        }else {
+                            writer.write(profile.getId() + "\t" + " Related Other" + "\t" + profile.getName() + "\n");
+                        }
+                    }
+                }
+                for(Profile profile: crime.getMiddleMan().getContact().values()){
+                    if(check.containsKey(profile.getId())){
+                        continue;
+                    }else {
+                        writer.write(profile.getId() + "\t" + " Related Other" + "\t" + profile.getName() + "\n");
+                    }
+                }
+                writer.close();
+                count++;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 
