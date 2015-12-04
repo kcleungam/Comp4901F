@@ -121,15 +121,15 @@ public class Flitter {
                 //First write the structure
                 FileWriter writer = new FileWriter("Flitter"+ count + ".txt");
                 writer.write("ID\tRole\tFlitter Name\n");
-                writer.write(crime.getEmployee().getId() + "\t" +"Employee" + "\t" + crime.getEmployee().getName() + "\n");
+                writer.write(crime.getEmployee().getId() + "\t" +"Employee" + "\t@" + crime.getEmployee().getName() + "\n");
                 check.put(crime.getEmployee().getId(), crime.getEmployee().getName());
                 for(Account account: crime.getHandler()){
-                    writer.write(account.getId() + "\t" + "Handler" + "\t" + account.getName() + "\n");
+                    writer.write(account.getId() + "\t" + "Handler" + "\t@" + account.getName() + "\n");
                     check.put(account.getId(), account.getName());
                 }
-                writer.write(crime.getMiddleMan().getId() + "\t" + "Middleman" + "\t" + crime.getMiddleMan().getName() + "\n");
+                writer.write(crime.getMiddleMan().getId() + "\t" + "Middleman" + "\t@" + crime.getMiddleMan().getName() + "\n");
                 check.put(crime.getMiddleMan().getId(), crime.getMiddleMan().getName());
-                writer.write(crime.getFearlessLeader().getId() + "\t" + "Fearless Leader" + "\t" + crime.getFearlessLeader().getName() + "\n");
+                writer.write(crime.getFearlessLeader().getId() + "\t" + "Fearless Leader" + "\t@" + crime.getFearlessLeader().getName() + "\n");
                 check.put(crime.getFearlessLeader().getId(), crime.getFearlessLeader().getName());
 
                 ///// Then write the others
@@ -138,11 +138,12 @@ public class Flitter {
                         continue;
                     }else {
                         if(profile.checkLiveForeign() == true){
-                            writer.write(profile.getId() + "\t" + "Leader's International Contact" + "\t" + profile.getName() + "\n");
+                            writer.write(profile.getId() + "\t" + "Leader's International Contact" + "\t@" + profile.getName() + "\n");
                         }else{continue;}
                     }
                 }
 
+                /*
                 for (Profile profile: crime.getEmployee().getContact().values()){
                     if(check.containsKey(profile.getId())){
                         continue;
@@ -159,11 +160,12 @@ public class Flitter {
                         }
                     }
                 }
+                */
                 for(Profile profile: crime.getMiddleMan().getContact().values()){
                     if(check.containsKey(profile.getId())){
                         continue;
                     }else {
-                        writer.write(profile.getId() + "\t" + " Related Other" + "\t" + profile.getName() + "\n");
+                        writer.write(profile.getId() + "\t" + " Related Other" + "\t@" + profile.getName() + "\n");
                     }
                 }
                 writer.close();
