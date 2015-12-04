@@ -1,23 +1,23 @@
 ID	Role	Flitter Name
-142	Employee	lafouge
-38	Handler	krintz
-101	Handler	lonning
-318	Handler	formenti
-4980	Middleman	rosch
-11	Fearless Leader	cornell
-66	Leader's International Contact	lyonns
-925	Leader's International Contact	kechadi
-1336	Leader's International Contact	geibel
-1525	Leader's International Contact	baik
-2091	Leader's International Contact	agnew
-2839	Leader's International Contact	grabe
-3578	Leader's International Contact	singh
-3859	Leader's International Contact	konakovsky
-4184	Leader's International Contact	anderssen
-4244	Leader's International Contact	haase
-4358	Leader's International Contact	crockett
-5052	Leader's International Contact	tusera
-5221	Leader's International Contact	anily
-5547	Leader's International Contact	gates
-2909	 Related Other	berglund
-5977	 Related Other	koshkin
+142	Employee	@lafouge
+38	Handler	@krintz
+101	Handler	@lonning
+318	Handler	@formenti
+4980	Middleman	@rosch
+11	Fearless Leader	@cornell
+66	Leader's International Contact	@lyonns
+925	Leader's International Contact	@kechadi
+1336	Leader's International Contact	@geibel
+1525	Leader's International Contact	@baik
+2091	Leader's International Contact	@agnew
+2839	Leader's International Contact	@grabe
+3578	Leader's International Contact	@singh
+3859	Leader's International Contact	@konakovsky
+4184	Leader's International Contact	@anderssen
+4244	Leader's International Contact	@haase
+4358	Leader's International Contact	@crockett
+5052	Leader's International Contact	@tusera
+5221	Leader's International Contact	@anily
+5547	Leader's International Contact	@gates
+2909	 Related Other	@berglund
+5977	 Related Other	@koshkin
