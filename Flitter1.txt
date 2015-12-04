@@ -1,22 +1,22 @@
 ID	Role	Flitter Name
-100	Employee	schaffter
-194	Handler	reitenspies
-261	Handler	kushnir
-563	Handler	pettersson
-4994	Middleman	good
-4	Fearless Leader	szemeredi
-92	Leader's International Contact	tolbert
-282	Leader's International Contact	decker
-551	Leader's International Contact	chandru
-589	Leader's International Contact	kodama
-629	Leader's International Contact	nakhaeizadeh
-1450	Leader's International Contact	barvinok
-1630	Leader's International Contact	heyderhoff
-2077	Leader's International Contact	streng
-2103	Leader's International Contact	wotawa
-3235	Leader's International Contact	reed
-3946	Leader's International Contact	hogstedt
-4776	Leader's International Contact	bolotov
-5078	Leader's International Contact	avouris
-5561	Leader's International Contact	wenocur
-1612	 Related Other	moilanen
+100	Employee	@schaffter
+194	Handler	@reitenspies
+261	Handler	@kushnir
+563	Handler	@pettersson
+4994	Middleman	@good
+4	Fearless Leader	@szemeredi
+92	Leader's International Contact	@tolbert
+282	Leader's International Contact	@decker
+551	Leader's International Contact	@chandru
+589	Leader's International Contact	@kodama
+629	Leader's International Contact	@nakhaeizadeh
+1450	Leader's International Contact	@barvinok
+1630	Leader's International Contact	@heyderhoff
+2077	Leader's International Contact	@streng
+2103	Leader's International Contact	@wotawa
+3235	Leader's International Contact	@reed
+3946	Leader's International Contact	@hogstedt
+4776	Leader's International Contact	@bolotov
+5078	Leader's International Contact	@avouris
+5561	Leader's International Contact	@wenocur
+1612	 Related Other	@moilanen
