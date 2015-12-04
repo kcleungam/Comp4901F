@@ -23,10 +23,12 @@ public class Flitter {
         readContact(contactFile, accountList);
         international(accountList);
         //accountList.printAll();
-        accountList.printContactOf(4994);       //// works perfectly
+        //accountList.printContactOf(4994);       //// works perfectly
 
         //TODO Store the accountList which store all account into JSON, name as AccountList
         //toJson(accountList, "AccountList.json");
+
+        printAllCityCount(accountList);
 
         System.out.println("--------------------Handler------------------");
         AccountList handlerList = new AccountList();
@@ -107,7 +109,100 @@ public class Flitter {
         //toJson(structureList, "FullStructure.json");
         fullStructureJson(structureList);
         fullStructuretxt(structureList);
+        printFLContactLiving(structureList);
 
+    }
+
+    public static void printAllCityCount(AccountList accountList){
+        int Ryzkland = 0;
+        int Kouvnic = 0;
+        int Solvenz	= 0;
+        int Kannvic	 = 0;
+        int Prounov = 0;
+        int Koul = 0;
+        int Solank = 0;
+        int Pasko = 0;
+        int Sresk = 0;
+        int Otello = 0;
+        int Transpasko = 0;
+        int Tulamuk = 0;
+        for(Account account: accountList.getAccountList().values()){
+            switch (account.getLivingPlace()){
+                case "Ryzkland":
+                    Ryzkland++;
+                    break;
+                case  "Kouvnic":
+                    Kouvnic++;
+                    break;
+                case "Solvenz":
+                    Solvenz++;
+                    break;
+                case "Kannvic":
+                    Kannvic++;
+                    break;
+                case "Prounov":
+                    Prounov++;
+                    break;
+                case "Koul":
+                    Koul++;
+                    break;
+                case "Solank":
+                    Solank++;
+                    break;
+                case "Pasko":
+                    Pasko++;
+                    break;
+                case "Sresk":
+                    Sresk++;
+                    break;
+                case "Otello":
+                    Otello++;
+                    break;
+                case "Transpasko":
+                    Transpasko++;
+                    break;
+                case "Tulamuk":
+                    Tulamuk++;
+                    break;
+                default:
+                    System.out.println("Something Wrong");
+                    break;
+            }
+        }
+        System.out.println("Number of people live in Ryzkland: " + Ryzkland);
+        System.out.println("Number of people live in Kouvnic: " + Kouvnic);
+        System.out.println("Number of people live in Solvenz: " + Solvenz);
+        System.out.println("Number of people live in Kannvic: " + Kannvic);
+        System.out.println("Number of people live in Prounov: " + Prounov);
+        System.out.println("Number of people live in Koul: " + Koul);
+        System.out.println("Number of people live in Solank: " + Solank);
+        System.out.println("Number of people live in Pasko: " + Pasko);
+        System.out.println("Number of people live in Sresk: " + Sresk);
+        System.out.println("Number of people live in Otello: " + Otello);
+        System.out.println("Number of people live in Transpasko: " + Transpasko);
+        System.out.println("Number of people live in Tulamuk: " + Tulamuk);
+    }
+
+    public static void printFLContactLiving(ArrayList<CrimeStructure> structureList){
+        int Otello = 0;
+        int Transpasko = 0;
+        int Tulamuk = 0;
+        for(CrimeStructure crimeStructure: structureList){
+            System.out.println("Fearless Leader:" + crimeStructure.getFearlessLeader().getId());
+            for (Profile profile: crimeStructure.getFearlessLeader().getContact().values()){
+                if(profile.getLivingPlace().equals("Otello")){
+                    Otello++;
+                }else if(profile.getLivingPlace().equals("Transpasko")){
+                    Transpasko++;
+                }else if(profile.getLivingPlace().equals("Tulamuk")){
+                    Tulamuk++;
+                }
+            }
+            System.out.println("Number of contact person of Fearless Leader live in Otello: " + Otello);
+            System.out.println("Number of contact person of Fearless Leader live in Transpasko: " + Transpasko);
+            System.out.println("Number of contact person of Fearless Leader live in Tulamuk: " + Tulamuk);
+            System.out.println("------------------------------");
+        }
     }
 
     public static void fullStructuretxt(ArrayList<CrimeStructure> structureList){
