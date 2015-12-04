@@ -12,14 +12,19 @@
     }
 
 </style>
-<body>
+<head>
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
-
+	function f(number){
+	var n=String(number);
+	var path="Middleman_"+n+".json";
+	
+	d3.selectAll("#graph > center > *").remove();//clear the previous graph
+	
     var width = 960,
-            height = 960
+            height = 960;
 
-    var svg = d3.select("body").append("svg")
+    var svg = d3.select("#graph > center").append("svg")
             .attr("width", width)
             .attr("height", height);
 
@@ -29,7 +34,7 @@
             .charge(-100)
             .size([width, height]);
 
-    d3.json("Middleman_3.json", function(error, json) {
+    d3.json(path, function(error, json) {
         if (error) throw error;
         var edges = [];
         json.links.forEach(function(e) {
@@ -77,5 +82,30 @@
         });
 
     });
-
+	}
 </script>
+</head>
+<body>
+	<div id="info">
+		<center>
+			<H1>Middleman</H1>
+			<H3>Handlers should share a common middleman</H3>
+		</center>
+	</div>
+	<div id="graph">
+		<center></center>
+	</div>
+	<div id="control">
+		<center>
+			<button type="button" onclick="f(0)">1</button>
+			<button type="button" onclick="f(1)">2</button>
+			<button type="button" onclick="f(2)">3</button>
+			<button type="button" onclick="f(3)">4</button>
+			<button type="button" onclick="f(4)">5</button>
+			<button type="button" onclick="f(5)">6</button>
+			<button type="button" onclick="f(6)">7</button>
+			<button type="button" onclick="f(7)">8</button>
+			<button type="button" onclick="f(8)">9</button>
+		</center>
+	</div>
+</body>
