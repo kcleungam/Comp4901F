@@ -5,9 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>template</title>
     <link rel="stylesheet" type="text/css" href="test.css">
+	<script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
+	<script type="text/javascript" src="test.js"></script>
+	<script>
+		function change(number){
+			var n=parseInt(number);
+			if(n==1||n==2){
+				d3.selectAll("#root > svg > *").remove();
+				document.getElementById("title").innerHTML="Fearless Leader "+n;
+				f(n);
+			}
+		}
+	</script>
     </head>
-    <body><div id="root"><svg width="100%" height="600px" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid"></svg></div>
-        <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
-        <script type="text/javascript" src="test.js"></script>
+    <body>
+		<!-- title, legend -->
+		<div id="info">
+		<center>
+			<H1 id="title">Fearless Leader</H1>
+			<H3>Fearless leader has over 100 links, including international links.</H3>
+			<ul>
+				<li>Size of bubbles varies as the number of the corrensponding Flitter contacts.</li>
+				<li>The number inside bubbles represent the Flitter IDs.</li>
+			</ul>
+		</center>
+			<svg width="100%" height="25px" viewBox="0 0 800 25" preserveAspectRatio="xMidYMid">
+				<rect x="150" y="0" width="15" height="15" fill="#1f77b4"/>
+				<text x="170" y="15" fill="black">Contains international links</text>
+				<rect x="450" y="0" width="15" height="15" fill="#ff7f0e"/>
+				<text x="470" y="15" fill="black">Not contain international link</text>
+			</svg>
+		</div>
+		<!-- bubble-cloud -->
+		<div id="root"><svg width="100%" height="600px" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid"></svg></div>
+		<div id="control">
+			<center>
+				<button type="button" onclick="change(1)">1</button>
+				<button type="button" onclick="change(2)">2</button>
+			</center>
+		<div>
+        <!--<script type="text/javascript" src="test2.js"></script>-->
     </body>
 </html>

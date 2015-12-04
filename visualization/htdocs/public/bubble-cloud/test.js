@@ -1,4 +1,10 @@
-d3.csv("data/FearlessLeader_WithBoolean_0.csv", function(data) {
+function f(n){
+	var path;
+	if(n==1)
+		path="data/FearlessLeader_WithBoolean_0.csv";
+	else
+		path="data/FearlessLeader_WithBoolean_1.csv";
+d3.csv(path, function(data) {
     console.log(data);
     var dataobj = { children: data };
     var pack = d3.layout.pack().padding(2).size([800,600]).sort(function(a,b) { return b.count - a.count; })
@@ -7,7 +13,7 @@ d3.csv("data/FearlessLeader_WithBoolean_0.csv", function(data) {
     var nodes = pack.nodes(dataobj);
     nodes = nodes.filter(function(it) { return it.parent; });
     var color = d3.scale.category10();
-    d3.select("svg")
+    d3.select("#root > svg")
         .selectAll("circle")
         //.data(nodes)
         //.enter()
@@ -25,7 +31,7 @@ d3.csv("data/FearlessLeader_WithBoolean_0.csv", function(data) {
             stroke: "#444",                    // 邊框畫深灰色
         });
 
-    d3.select("svg").selectAll("text").data(nodes).enter()
+    d3.select("#root > svg").selectAll("text").data(nodes).enter()
         .append("text")
         .attr({
             x: function(it) { return it.x; },
@@ -36,3 +42,4 @@ d3.csv("data/FearlessLeader_WithBoolean_0.csv", function(data) {
 });/**
  * Created by RickyLo on 1/12/2015.
  */
+}
