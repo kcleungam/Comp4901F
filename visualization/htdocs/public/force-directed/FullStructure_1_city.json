@@ -4,7 +4,7 @@
     "id": "142",
     "name": "Employee",
     "city":"Prounov",
-    "x":420,
+    "x":435,
     "y":320,
     "fixed":true
   },
@@ -20,8 +20,8 @@
     "id": "101",
     "name": "Handler",
     "city":"koul",
-    "x":260,
-    "y":350,
+    "x":320,
+    "y":320,
     "fixed":true
   },
   {
@@ -37,7 +37,7 @@
     "name": "Middleman",
     "city":"koul",
     "x":280,
-    "y":330,
+    "y":350,
     "fixed":true
   },
   {
