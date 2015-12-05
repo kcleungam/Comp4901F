@@ -44,12 +44,12 @@
   {
     "id": "194",
     "name": "reitenspies(Handler)",
-    "identity":"0"
+    "identity":"1"
   },
   {
     "id": "261",
     "name": "kushnir(Handler)",
-    "identity":"0"
+    "identity":"1"
   },
   {
     "id": "268",
@@ -82,7 +82,7 @@
   {
     "id": "563",
     "name": "pettersson(Handler)",
-    "identity":"0"
+    "identity":"1"
   },
   {
     "id": "792",
@@ -291,7 +291,7 @@
   {
     "id": "4994",
     "name": "good(Middleman)",
-    "identity":"0"
+    "identity":"2"
   },
   {
     "id": "5376",
@@ -552,7 +552,7 @@
   {
     "id": "4",
     "name": "szemeredi(Fearless_leader)",
-    "identity":"0"
+    "identity":"3"
   },
   {
     "id": "1612",

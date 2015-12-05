@@ -20,17 +20,17 @@
   {
     "id": "38",
     "name": "krintz(Handler)",
-    "identity":"0"
+    "identity":"1"
   },
   {
     "id": "101",
     "name": "lonning(Handler)",
-    "identity":"0"
+    "identity":"1"
   },
   {
     "id": "318",
     "name": "formenti(Handler)",
-    "identity":"0"
+    "identity":"1"
   },
   {
     "id": "371",
@@ -307,7 +307,7 @@
   {
     "id": "4980",
     "name": "rosch(Middleman)",
-    "identity":"0"
+    "identity":"2"
   },
   {
     "id": "5894",
@@ -324,7 +324,7 @@
   {
     "id": "11",
     "name": "cornell(Fearless Leader)",
-    "identity":"0"
+    "identity":"3"
   },
   {
     "id": "83",
