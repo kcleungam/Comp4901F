@@ -12,14 +12,16 @@
     }
 
 </style>
-<body>
+<head>
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
+function f(n){
+	var path="FullStructure_"+n+"_full_nomap.json";
+	d3.selectAll("#graph > center > *").remove();
+    var width = 1600,
+            height = 1200;
 
-    var width = 1200,
-            height = 1000
-
-    var svg = d3.select("body").append("svg")
+    var svg = d3.select("#graph > center").append("svg")
             .attr("width", width)
             .attr("height", height);
 
@@ -29,7 +31,7 @@
             .charge(-100)
             .size([width, height]);
 
-    d3.json("FullStructure_1_full_nomap.json", function(error, json) {
+    d3.json(path, function(error, json) {
         if (error) throw error;
         var edges = [];
         json.links.forEach(function(e) {
@@ -106,5 +108,27 @@
         });
 
     });
-
+}
 </script>
+</head>
+<body>
+	<div id="info">
+		<center>
+			<H1>Full structure without map</H1>
+			<img src="employee.png" width="25" height="25">Employee
+			<img src="handler.png" width="25" height="25">Handler
+			<img src="middleman.png" width="25" height="25">Middleman
+			<img src="devil.png" width="25" height="25">Fearless Leader
+			<img src="ball.png" width="25" height="25">Related others
+		</center>
+	</div>
+	<div id="graph">
+		<center></center>
+	</div>
+	<div id="control">
+		<center>
+			<button type="button" onclick="f(0)">1</button>
+			<button type="button" onclick="f(1)">2</button>
+		</center>
+	</div>
+</body>

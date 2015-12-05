@@ -13,23 +13,27 @@
     }
 
 </style>
-<body>
+<head>
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
-
+	function f(n){
+	var path="FullStructure_"+n+"_city.json";
+	
+	d3.selectAll("#graph > center > * ").remove();
+	
     var width = 1126,
             height = 707
 
-    var svg = d3.select("body").append("svg")
+    var svg = d3.select("#graph > center").append("svg")
             .attr("width", width)
             .attr("height", height);
 
     svg.append("image")       // attach a rectangle
-            .attr("xlink:href","map.jpg")
-            .attr("x", 0)         // position the left of the rectangle
-            .attr("y", 0)          // position the top of the rectangle
-            .attr("height", 707)    // set the height
-            .attr("width", 1126);
+           .attr("xlink:href","map.jpg")
+           .attr("x", 0)         // position the left of the rectangle
+           .attr("y", 0)          // position the top of the rectangle
+           .attr("height", 707)    // set the height
+           .attr("width", 1126);
 
     var force = d3.layout.force()
             .gravity(.05)
@@ -37,7 +41,7 @@
             .charge(-100)
             .size([width, height]);
 
-    d3.json("FullStructure_1_city.json", function(error, json) {
+    d3.json(path, function(error, json) {
         if (error) throw error;
         var edges = [];
         json.links.forEach(function(e) {
@@ -70,7 +74,7 @@
                     else if(d.name == "Handler"){return "handler.png"}
                     else if(d.name == "Middleman"){return "middleman.png"}
                     else if(d.name == "Fearless_leader"){return "devil.png"}
-                    else{return "ball.jpg"}
+                    else{return "ball.png"}
                 })
                 .attr("x", -8)
                 .attr("y", -8)
@@ -80,9 +84,9 @@
                 }
         )
                 .attr("height", function(d) {
-                    if (d.type == "city") {return 0}
-                    else {return 30}
-                }
+            if (d.type == "city") {return 0}
+            else {return 30}
+        }
         );
         //test
 //        node.append("image")
@@ -106,35 +110,56 @@
 //                if(d.source.city == "Kouvnic"){return 370;}
 //                else if(d.source.city == "Kannvic"){return 300;}
 //                else {return 420;}
-                return d.source.x;
+return d.source.x;
             })
                     .attr("y1", function(d) {
 //                        if(d.source.city == "Kouvnic"){return 100;}
 //                        else if(d.source.city == "Kannvic"){return 245;}
 //                        {return 320;}
-                        return d.source.y;
+return d.source.y;
                     })
                     .attr("x2", function(d) {
 //                        if(d.target.city == "Kouvnic"){return 370;}
 //                        else if(d.target.city == "Kannvic"){return 300;}
 //                        {return 420;}
-                        return d.target.x;
+return d.target.x;
                     })
                     .attr("y2", function(d) {
 //                        if(d.target.city == "Kouvnic"){return 100;}
 //                        else if(d.target.city == "Kannvic"){return 245;}
 //                        {return 320;}
-                        return d.target.y;
+return d.target.y;
                     });
 
             node.attr("transform", function(d) {
 //                if(d.city == "Kouvnic"){return "translate(" + 370 + "," + 100 + ")";}
 //                else if(d.city == "Kannvic"){return "translate(" + 300 + "," + 245 + ")";}
 //                {return "translate(" + 420 + "," + 320 + ")";}
-                return "translate(" + d.x + "," + d.y + ")";
+return "translate(" + d.x + "," + d.y + ")";
             });
         });
 
     });
-
+}
 </script>
+</head>
+<body>
+	<div id="info">
+		<center>
+			<H1>Full structure with map</H1>
+			<img src="employee.png" width="25" height="25">Employee
+			<img src="handler.png" width="25" height="25">Handler
+			<img src="middleman.png" width="25" height="25">Middleman
+			<img src="devil.png" width="25" height="25">Fearless Leader
+		</center>
+	</div>
+	<div id="graph">
+		<center></center>
+	</div>
+	<div id="control">
+		<center>
+			<button type="button" onclick="f(0)">1</button>
+			<button type="button" onclick="f(1)">2</button>
+		</center>
+	</div>
+</body>
